@@ -131,7 +131,7 @@ Câu A4 (5đ) — Table
     Lỗi 7: Dòng 12,13 — Mô tả lỗi: thuộc tính href ghi chưa đúng , thiếu dấu # đằng trước chuỗi — Cách sửa:
                 <a href="#home">Trang chủ</a>
                 <a href="#products">Sản phẩm</a>
-
+    lỗi 8: dòng 19,26 -Mô tả lỗi: sau tab <h1> phải là <h2>- cách sửa đổi <h3> thành <h2>
     Lỗi 8: Dòng 20 — Mô tả lỗi: thuộc tính src phải để trong dấu "" — Cách sửa:            <img src="iphone.jpg">
                 
     Lỗi 9: Dòng  22— Mô tả lỗi: thứ tự đóng thẻ không đúng , đây là giá tiền nên phải để trong thẻ strong— Cách sửa:
