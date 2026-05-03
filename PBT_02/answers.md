@@ -79,3 +79,91 @@ Câu A5 (5đ) — So sánh <figure> vs <img>
     Ý nghĩa ngữ nghĩa (Semantic): Thông báo cho trình duyệt và bộ máy tìm kiếm (SEO) rằng: "Đây là một đơn vị nội dung quan trọng, và phần chữ bên dưới chính là mô tả chính xác cho hình ảnh này".
 
     Khi nào dùng: Khi hình ảnh cần một tiêu đề hoặc chú thích đi kèm để người dùng hiểu rõ thông tin chi tiết (ví dụ: tên sản phẩm + giá tiền).
+
+PHẦN C — PHÂN TÍCH & SUY LUẬN (20 điểm)
+
+
+Câu C1 (10đ) — Debug Form
+Form dưới đây có 8 lỗi về validation, accessibility, và best practices. Tìm và sửa tất cả.
+
+    <form>
+        Tên: <input type="text">
+        
+        <input type="email" placeholder="Email của bạn">
+        
+        <input type="password" placeholder="Mật khẩu">
+        <input type="password" placeholder="Nhập lại mật khẩu">
+        
+        Phone: <input type="text" value="0901234567">
+        
+        <select>
+            <option>Hà Nội</option>
+            <option>TP.HCM</option>
+        </select>
+        
+        <label>
+            Tôi đồng ý điều khoản
+        </label>
+        
+        <input type="submit" value="Gửi">
+    </form>
+
+    Lỗi 1: Dòng 2 — Input "Tên" thiếu thẻ <label> liên kết qua id và thiếu thuộc tính name.
+
+    Sửa: <label for="name">Tên:</label> <input type="text" id="name" name="name" required>
+
+    Lỗi 2: Dòng 4 — Input "Email" thiếu thẻ <label> và thuộc tính required.
+
+    Sửa: <label for="email">Email:</label> <input type="email" id="email" name="email" placeholder="Email của bạn" required>
+
+    Lỗi 3: Dòng 6 & 7 — Các ô "Mật khẩu" thiếu thẻ <label> và các thuộc tính ràng buộc độ mạnh mật khẩu.
+
+    Sửa: <label for="pwd">Mật khẩu:</label> <input type="password" id="pwd" name="password" minlength="8" required>
+
+    Lỗi 4: Dòng 9 — Input "Phone" dùng sai type="text" và thiếu thuộc tính pattern.
+
+    Sửa: <label for="phone">Phone:</label> <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+    Lỗi 5: Dòng 11 — Thẻ <select> thiếu thuộc tính name và thiếu một tùy chọn mặc định (placeholder option).
+
+    Sửa: <select name="city" id="city" required> <option value="" disabled selected>Chọn thành phố</option> ... </select>
+
+    Lỗi 6: Dòng 16 — Thẻ <label> cho điều khoản thiếu thẻ <input type="checkbox"> bên trong hoặc liên kết ngoài.
+
+    Sửa: <input type="checkbox" id="tos" name="tos" required> <label for="tos">Tôi đồng ý điều khoản</label>
+
+    Lỗi 7: Toàn bộ Form — Thiếu thuộc tính action và method trong thẻ <form>.
+
+    Sửa: <form action="/submit-path" method="POST">
+
+    Lỗi 8: Dòng 19 — Nút Submit nên dùng thẻ <button type="submit"> để dễ tùy biến và hỗ trợ tốt hơn cho trợ năng.
+
+    Sửa: <button type="submit">Gửi</button>
+
+Câu C2 (10đ) — Thiết kế chiến lược Validation
+Bạn xây dựng form đăng ký cho ngân hàng số. Yêu cầu:
+
+CMND/CCCD: đúng 12 chữ số
+Số tài khoản: 10-15 chữ số
+Email: bắt buộc, đúng format
+PIN: đúng 6 chữ số, KHÔNG hiển thị
+Câu hỏi:
+
+Viết pattern regex cho CMND/CCCD và Số tài khoản
+CMND/CCCD (Đúng 12 chữ số):
+    pattern="\d{12}" hoặc pattern="[0-9]{12}"
+
+    Số tài khoản (Từ 10 đến 15 chữ số):
+    pattern="\d{10,15}"
+Giải thích: HTML5 validation đủ an toàn cho ứng dụng ngân hàng chưa? Tại sao?
+    HTML5 validation chỉ là UX convenience — dễ dàng bypass bằng browser DevTools. Luôn phải validate ở server
+Liệt kê 3 loại validation mà HTML5 KHÔNG THỂ làm được (phải dùng JavaScript)
+    Kiểm tra sự tồn tại (Availability Check): Ví dụ: Kiểm tra xem Email hoặc Số tài khoản đã tồn tại trong cơ sở dữ liệu hay chưa ngay khi người dùng đang nhập.
+
+    So khớp dữ liệu (Matching Validation): Ví dụ: Kiểm tra xem ô "Nhập lại mật khẩu" có trùng khớp hoàn toàn với ô "Mật khẩu" hay không.
+
+    Logic phụ thuộc (Dependent Validation): Ví dụ: Nếu người dùng chọn phương thức nhận mã OTP là "Email" thì mới bắt buộc hiện và validate ô nhập Email, còn chọn "SMS" thì ẩn đi.
+Nêu 2 rủi ro bảo mật nếu chỉ validate trên Frontend mà không validate Backend
+    Tấn công tiêm nhiễm dữ liệu (Injection Attacks): Kẻ tấn công có thể sử dụng các công cụ như Postman hoặc cURL để gửi trực tiếp dữ liệu độc hại (SQL Injection, XSS) tới Server, bỏ qua hoàn toàn lớp bảo vệ của trình duyệt. Điều này dẫn đến nguy cơ lộ lọt dữ liệu hoặc hỏng hóc hệ thống.
+
+    Sai lệch dữ liệu hệ thống (Data Integrity Violation): Nếu không có Backend validation, những dữ liệu sai định dạng hoặc dữ liệu rác (ví dụ: số tài khoản là chữ cái) sẽ được lưu vào cơ sở dữ liệu. Điều này gây lỗi nghiêm trọng cho các tiến trình xử lý giao dịch, tính toán tài chính và đối soát của ngân hàng.
