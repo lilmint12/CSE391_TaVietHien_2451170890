@@ -1,0 +1,50 @@
+* { box-sizing: border-box; }
+body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(148, 149, 103);
+    color: black;
+    line-height: 20px;
+}
+header{
+    color: white;
+    background: linear-gradient(rgb(255, 153, 0), rgb(255, 204, 0),rgb(255, 255, 255));
+    padding: 20px;
+}
+.menu a{
+    text-decoration: none;
+    color: black;
+}
+nav a:hover{
+    color: aqua;
+    text-decoration: underline;
+}
+nav a:active{
+    color: red;
+}
+table {
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid black; 
+    padding: 10px;         
+}
+#profile{
+    background-color: aquamarine;
+}
+
+th {
+    background-color: burlywood;
+    color: white;
+}
+table tr:nth-child(even) td {
+    background-color: rgba(103, 66, 66, 0.1); 
+}
+table tr:hover{
+    background-color: rgba(0, 255, 255, 0.29);
+}
+footer{
+    background-color: rgb(190, 47, 0);
+    color: beige;
+    text-align: center;
+}

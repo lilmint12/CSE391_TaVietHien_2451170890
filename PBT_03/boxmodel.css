@@ -1,0 +1,35 @@
+div{
+    display: flex;
+}
+.a{
+    box-sizing: content-box;
+    width: 300px;
+    padding: 20px;
+    border: 5px solid;
+}
+.b{
+    box-sizing: border-box;
+    width: 300px;
+    padding: 20px;
+    border: 5px solid;
+}
+.container{
+    box-sizing: border-box;
+    width: 1000px;
+}
+.sidebar{
+    box-sizing: border-box;
+    width: 250px;
+    padding: 15px;
+    background-color: antiquewhite;
+}
+.content{
+    box-sizing: border-box;
+    width: 500px;
+    padding: 20px;
+}
+.ads{
+    box-sizing: border-box;
+    width: 250px;
+    background-color: antiquewhite;
+}

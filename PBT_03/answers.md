@@ -119,3 +119,11 @@ Câu A4 (5đ) — Specificity (Độ ưu tiên)
     <p class="price" id="main-price"style="color: orange;">, element có màu gì?
     Nếu Rule A thêm !important, element có màu gì? Tại sao?
     
+Bài B2 (20đ) — Box Model Lab
+    Hộp 1 (content-box): chiều rộng thực tế =  350px (đo từ DevTools)
+    Hộp 2 (border-box): chiều rộng thực tế =  300px (đo từ DevTools)
+    Giải thích sự khác biệt: 
+    -content box  : nở ra kiểm soát từng padding,margin,width,border nhưng phải thủ công.
+    -border box : giới hạn ở ngoài, dễ kiểm soát
+Bài B3 (15đ) — Specificity Battle
+[!alttext](/PBT_03/screenshots/b3.png)

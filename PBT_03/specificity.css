@@ -1,0 +1,12 @@
+p { color: wheat; }                          /* Specificity: 0,0,1 */
+.text { color: white; }                      /* Specificity: 0,1,0 */
+#demo{color: #bf4040;}                      /*Specificity: 1,0,0*/
+.highlight{color: aqua;}                    /*Specificity: 0,1,0*/
+.text.highlight{color: aqua;}               /*Specificity: 0,2,0*/
+p.text{color: green;}                    /* Specificity: 0,1,1 */
+p.text#demo{color: pink;}                    /* Specificity: 1,1,1 */
+p#demo{color: aquamarine;}                    /* Specificity: 1,1,0 */
+p.highlight#demo{color: black;}                    /* Specificity: 1,1,1 */
+p.text.highlight#demo{color: blue;}                    /* Specificity: 1,2,1 */
+
+
