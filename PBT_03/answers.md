@@ -127,3 +127,58 @@ Bài B2 (20đ) — Box Model Lab
     -border box : giới hạn ở ngoài, dễ kiểm soát
 Bài B3 (15đ) — Specificity Battle
 [!alttext](/PBT_03/screenshots/b3.png)
+    p { color: wheat; }                          /* Specificity: 0,0,1 */
+    .text { color: white; }                      /* Specificity: 0,1,0 */
+    #demo{color: #bf4040;}                      /*Specificity: 1,0,0*/
+    .highlight{color: aqua;}                    /*Specificity: 0,1,0*/
+    .text.highlight{color: aqua;}               /*Specificity: 0,2,0*/
+    p.text{color: green;}                    /* Specificity: 0,1,1 */
+    p.text#demo{color: pink;}                    /* Specificity: 1,1,1 */
+    p#demo{color: aquamarine;}                    /* Specificity: 1,1,0 */
+    p.highlight#demo{color: black;}                    /* Specificity: 1,1,1 */
+    p.text.highlight#demo{color: blue;}                   /* Specificity: 1,2,1*/
+    
+    element cuối cùng hiển thị là màu blue, vì có specificity cao nhất (1,2,1)
+
+    thay đổi thứ tự rule không thay đổi vì trình duyệt ưu tiên css theo 3 bước nguồn gốc-> độ cụ thể-> thứ tự xuất hiện. vì 10 cai trên có độ cụ thệ khác nhau nên sẽ lấy rule có mức độ cao hơn.
+
+Câu C1 (10đ) — Debug CSS Layout
+    1. chiều rộng thực tế của sidebar 342px, content 722px
+    2. layout bị vỡ vì sidebar và content có tổng độ rộng là 1064 px trong khi layout container có độ rộng là 960px nên content bị đẩy xuống dưới
+    3.
+    cách 1 (dùng border-box) Thiết lập thuộc tính box-sizing:border-box cho cả 3 layout trên điều này làm cho độ dài layout giới hạn đúng bằng width
+    cách 2 : tính thủ công lại muốn được độ dài tương ứng với width thì width = width-(padding+border)*2
+Câu C2 (10đ) — Cascade Puzzle
+
+    <body>
+        <div class="container">
+            <div class="card" id="featured">
+                <h2 class="title highlight">Sản phẩm A</h2>
+                <p>Mô tả sản phẩm</p>
+            </div>
+            <div class="card">
+                <h2 class="title">Sản phẩm B</h2>
+                <p class="highlight">Mô tả sản phẩm B</p>
+            </div>
+        </div>
+    </body>
+cascade
+    body { font-size: 16px; color: #333; }  (0,0,1)
+    .container { font-size: 14px; }           (0,1,0)
+    .card { color: blue; }                    (0,1,0)
+    .card .title { font-size: 20px; }         (0,2,0)
+    .card p { color: inherit; }               (0,1,1)
+    #featured .title { color: red; }          (1,1,0)
+    .highlight { color: green !important; }   (0,1,0) max
+    ------------------------------
+    1."Sản phẩm A" (h2) có font-size = 20 và color =  green
+    cascade : color=h2(class = highlight) inheritance =max (!important) -> color=green
+                    font-size = .card.title inherittance=(0,2,0) =20px
+    2."Mô tả sản phẩm" (p trong card featured) có color = blue
+    ban đầu .card p có color =inherit nghĩa là màu phụ thuộc vào phần tử cha nên 
+    xem phàn tử cha là div(class =card) có màu blue
+    3."Sản phẩm B" (h2) có font-size = 20px và color = blue
+    cascade : H2 này không có class highlight, cũng không nằm trong #featured. Vì nó không có rule nào quy định màu sắc trực tiếp, nó sẽ kế thừa (inheritance) màu từ cha của nó là .card (đang có màu blue).
+
+    4."Mô tả sản phẩm B" (p.highlight) có color = green
+        cascade : color=h2(class = highlight) inheritance =max (!important) -> color=green

@@ -1,0 +1,19 @@
+.container {
+    box-sizing: border-box;
+    width: 960px;
+    margin: 0 auto;
+}
+.sidebar {
+    box-sizing: border-box;    
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    float: left;
+}
+.content {
+    width: 660px;
+    box-sizing: border-box;
+    padding: 30px;
+    border: 1px solid #ccc;
+    float: left;
+}
