@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    text-decoration: none;
+    align-items: center;
+    height: 70px;
+    background-color: aquamarine;
+}
+nav{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    text-decoration: none;
+}
+.navbar img{
+    width: 50px;
+}
+a{
+    margin: 0 40px;    
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+}
+nav a:hover{
+    text-decoration: underline;
+    color: blue;
+}
+div>a{
+    margin: 0 40px;
+    padding: 6px 8px;
+    color: aliceblue;
+    background-color: rgb(3, 96, 18);
+    border-radius: 10px;
+}
+/* cảrd */
+.container{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+    flex: 0 0 calc(25%-20px);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    columns: 1fr 1fr;
+} 
+.card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.container img{
+    width: calc(25%-40px);
+}
+.name{
+    text-align: center;
+        width: 100%;
+}
+.price{
+    text-align: center;
+    width: 100%;
+}
+.buy{
+    text-align: center;
+    width: 100px;
+    padding: 5px 10px;
+    background-color: blue;
+    color: aliceblue;
+}

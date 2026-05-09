@@ -1,0 +1,85 @@
+body {
+    padding-top: 60px; 
+}
+header{
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    height: 60px;
+    width: 100%;
+    background-color: #2c3e50;
+    color: aliceblue;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+nav{
+    display: flex;
+    align-items: center;
+}
+nav a{
+    padding:0 15px;
+    text-decoration: none;
+}
+img{
+    display: block;
+    height: 45px;
+}
+main{
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    align-items: flex-start;
+}
+aside{
+    flex: 0 0 250px;
+    position: sticky;
+    top: 80px;
+    height: 500px;
+    background-color: antiquewhite;
+}
+section{
+    flex: 1;
+    background-color: aquamarine;
+    height: 10000px;
+    padding: 20px;
+}
+.products{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+}
+.product{
+    height: 150px; /* Tăng chiều cao để cân đối hơn 50px */
+    width: 100%;   /* Để lấp đầy cột Grid thay vì chỉ 40px */
+    position: relative; 
+    background-color: aqua;
+    border: 1px solid #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+span{
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: aliceblue;
+    border-radius: 50%;
+}
+.button{
+    display: flex;         
+    justify-content: center; 
+    align-items: center;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    color: aliceblue;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+    text-decoration: none;
+}
