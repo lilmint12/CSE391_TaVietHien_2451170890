@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    text-align: center;
+}
+
+header, footer, .hero {
+    grid-column: 1 / -1;
+    height: 100px;
+}
+
+header, footer {
+    background-color: aqua;
+}
+
+.hero {
+    background-color: rgb(0, 255, 98);
+}
+
+main {
+    display: contents;
+}
+
+.filter {
+    grid-column: 1;
+}
+
+.main {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+    align-items: center;
+}
+
+.ads {
+    grid-column: 3;
+}
+
+.card {
+    width: 100px;
+    height: 150px;
+    background-color: rgb(0, 21, 255);
+}
+
+div input[type="checkbox"] {
+    margin-top: 10px;
+    display: inline;
+}
+
+p {
+    display: inline;
+}
