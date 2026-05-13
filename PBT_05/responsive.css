@@ -1,0 +1,82 @@
+/* mobile-first */
+*{
+    font-size: 10px;
+}
+.header nav{
+    display: none;
+}
+.product-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.card{
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+} 
+img{
+    max-width: 100%;
+    height: auto;
+}
+footer{
+    color: aqua;
+}
+.filter{
+    display: none;
+}
+.ads-bar{
+    display: none;
+}
+
+@media screen and (min-width:768px){
+    .header nav{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+    }
+    nav a{
+        text-decoration: none;
+    }
+    *{
+    font-size: 16px;
+    }
+    .hamburger-icon{
+        display: none;
+    }
+    .filter{
+        display: block;
+    }
+    .filter div{
+        display: flex;
+        justify-items: center;
+    }
+    .product-grid{
+        grid-template-columns: repeat(2,1fr);
+        gap: 2px;
+        align-items: center;
+    }
+}
+@media screen and (min-width:1024px){
+    *{
+        font-size: 18px;
+    }
+    .filter{
+        grid-column: 1;
+    }
+    .ads-bar{
+        grid-column: 3;
+    }
+    .product-grid{
+        grid-template-columns: repeat(4,1fr);
+        gap: 2px;
+        align-items: center;
+        grid-column: 2;
+    }
+    main {
+        grid-template-columns: 200px 1fr 200px;
+        text-align: center;
+    }
+
+}

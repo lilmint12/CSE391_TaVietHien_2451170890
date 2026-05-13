@@ -61,3 +61,59 @@ khoảng cách -- của các item là 20px
 .container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 /* 7 items → Bố cục = ??? (mấy hàng? item cuối ở đâu?) */
 3 hàng item cuối ở đầu hàng thứ 3
+
+
+
+### Câu C1 (10đ) — Flexbox vs Grid: Khi nào dùng gì?
+
+Cho 5 tình huống layout thực tế. Với mỗi tình huống, trả lời: dùng Flexbox, Grid, hay kết hợp cả hai? Giải thích ngắn gọn tại sao.
+
+1. Navigation bar ngang (logo + menu + buttons)
+dùng kết hợp cả 2 các menu dùng grid, logo, button dung flex vì logo,button ở lề flex sẽ hợp hơn grid, menu các nav cần khoảng các ổn định nên dùng grid
+2. Lưới ảnh Instagram (3 cột đều nhau, số ảnh không biết trước)
+    grid
+    Grid cực mạnh trong việc chia cột đều nhau (1fr 1fr 1fr). Dù có 10 hay 100 ảnh, chúng vẫn tự động xếp đúng hàng lối mà không cần tính toán phần trăm width như Flex.
+3. Layout blog: main content + sidebar
+    grid
+    Quản lý khung lớn (Layout tổng) tốt nhất. Giúp cố định Sidebar (ví dụ 300px) và để Main Content tự co giãn linh hoạt mà không bị xung đột.
+4. Footer với 4 cột thông tin (Về chúng tôi, Liên kết, Hỗ trợ, Liên hệ)
+    grid
+    Giúp 4 cột luôn thẳng hàng tăm tắp. Khi sang màn hình điện thoại, chỉ cần đổi grid-template-columns thành 1 hoặc 2 cột là xong, cực kỳ nhanh.
+5. Card sản phẩm (ảnh trên, text giữa, nút dưới — nút luôn dính đáy)
+    flex
+    Phù hợp để sắp xếp các thành phần bên trong một khối. Cơ chế margin-top: auto của Flexbox là cách "vô đối" để dính nút bấm vào đáy card.
+### Câu C2 (10đ) — Debug Flexbox
+Layout sau bị lỗi. Mô tả lỗi và sửa.
+
+1. Lỗi 1: Cards không đều chiều cao — nút "Mua" bị nhảy lên/xuống
+
+.card-container { display: flex; flex-wrap: wrap; }
+.card { width: 30%; margin: 1.5%; }
+.card img { width: 100%; }
+.card h3 { font-size: 18px; }
+.card .btn { padding: 10px; }
+
+    Khi dùng Flexbox cho thẻ cha, các .card sẽ có chiều cao bằng nhau (nhờ mặc định align-items: stretch). Tuy nhiên, các thành phần bên trong .card không biết tự dàn hàng. Nếu tiêu đề h3 dài ngắn khác nhau, nút bấm sẽ nằm ngay sau chữ, dẫn đến hàng nút bị "nhấp nhô".
+lỗi do h3 và button có tổng chiều dài vùa container thì button sẽ bị ngay gần dòng với h3-> thêm margin-top cho button
+chiều cao button k đều được vì có đoạn văn bản dài ngắn khác nhau khiến container co dãn theo ta dùng flex-direction: column  để cho các phần tử xếp thành hàng dọc không bị trùng dòng
+
+2. Lỗi 2: Muốn items nằm giữa cả ngang lẫn dọc trong container 100vh, nhưng item vẫn dính góc trái trên
+
+.hero {
+    height: 100vh;
+    display: flex;
+}
+.hero-content {
+    text-align: center;
+}
+lỗi do không sử dụng justify-content :center cái này giúp content được căn ở giữa hero, align-items : center giúp item ở giữa theo trục ngang
+
+3. Lỗi 3: Sidebar bị co lại khi content quá dài
+
+.layout { display: flex; }
+.sidebar { width: 250px; }
+.content { flex: 1; }
+
+lỗi do content để flex là 1 còn sidebar là px tĩnh nên conten sẽ chiếm hết phần còn lại của layout nếu conten quá dài thì sẽ bóp phần tử kia lại 
+Cho mỗi lỗi: Giải thích nguyên nhân → Viết code sửa → Chụp screenshot trước/sau.
+

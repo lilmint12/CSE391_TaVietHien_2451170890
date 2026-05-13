@@ -1,0 +1,23 @@
+.product-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.product-card{
+    background: linear-gradient( 135deg,rgb(196, 168, 55),rgb(255, 220, 220));
+}
+.product-card:hover{
+    transform: translateY(-8px);
+    box-shadow: -8px 2px 3px rgba(0, 0, 0, 0.581);
+    transition: all 0.3s ease;
+}
+.btn-buy{
+    background-color: antiquewhite;
+    color: black;
+}
+.btn-buy:hover{
+    background-color: aquamarine;
+    color: blueviolet;
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+}
