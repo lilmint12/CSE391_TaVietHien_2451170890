@@ -1,49 +1,120 @@
-/* Custom phần navbar toàn màn hình cho điện thoại */
+
+#navbar-primary {
+    background-color: transparent !important; 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+#navbar-primary .navbar-brand {
+    color: #ffffff !important;
+}
+#btn-list {
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+}
+#navbarNav {
+    display: none !important;
+    color: white;
+}
+
 #navbar-phone {
     position: fixed;        
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 50vh;
     width: 100%;           
-    z-index: 1050; 
+    z-index: 1060; 
     display: flex;          
     flex-direction: column;
     align-items: center;    
-    background-color: white; 
-    transform: translateY(-100%); 
-    transition: transform 0.5s cubic-bezier(0, 0.085, 0.68, 0.53); 
-}
-.hero-section {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh; 
-    background-image: url(https://img.thuthuat123.com/uploads/2019/07/13/anh-hoa-sen-rat-dep_090626892.jpg); 
-    background-position: center center; 
-    background-size: cover;             
-    background-repeat: no-repeat;    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#navbar-phone ul{
-    width: 100%;
-}
-#navbar-phone .nav-link:hover{
-    color: rgb(43, 43, 43);
-    background-color: rgb(195, 195, 195);
-    transition: 0.5s ease;
-}
-#navbar-primary {
-    /* Ép nền trong suốt tuyệt đối để lộ ảnh hoa sen lớp dưới */
     background-color: transparent !important; 
-    
-    /* Tạo hiệu ứng mượt mà khi biến đổi màu nền lúc cuộn trang */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+    transform: translateY(-100%); 
+    transition: transform 0.2s ease, background-color 0.3s ease; 
 }
+#navbar-phone.show {
+    transform: translateY(0);
+    background-color: #ffffff !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+#navbar-phone ul {
+    width: 100%;
+    padding: 0;
+}
+#navbar-phone .nav-link {
+    padding: 12px 0;
+    display: block;
+    text-align: center;
+}
+#navbar-phone .nav-link:hover {
+    color: #ffc107 !important;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Trạng thái khi cuộn chuột TRÊN MOBILE --- */
+#navbar-primary.scrolled,
+#navbar-phone.scrolled {
+    background-color: #ffffff !important; /* Cuộn xuống biến thành màu trắng */
+}
+#navbar-primary.scrolled .navbar-brand {
+    color: #0d6efd !important;
+}
+#navbar-primary.scrolled #btn-list,
+#navbar-phone.scrolled #btn-X {
+    color: #333333 !important;
+}
+#navbar-phone.scrolled .nav-link {
+    color: #333333 !important;
+    text-shadow: none;
+}
+#navbar-phone.scrolled .nav-link:hover {
+    color: #0d6efd !important;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+/* ==========================================================================
+   2. CẤU HÌNH CHO PC / LAPTOP (Áp dụng từ màn hình màn hình 992px trở lên)
+   ========================================================================== */
 @media screen and (min-width: 992px) {
+    /* Ẩn hoàn toàn menu mobile tự chế */
     #navbar-phone {
         display: none !important; 
     }
+    
+    /* Hiện lại menu mặc định cấu trúc ngang của Bootstrap */
+    #navbarNav {
+        display: flex !important;
+    }
+    
+    /* Ẩn nút Hamburger ☰ đi */
+    #btn-list {
+        display: none !important;
+    }
+
+    /* Định hình lại màu chữ hover trên PC lúc chưa cuộn */
+    #navbar-primary .nav-link:hover {
+        color: #ffc107 !important;
+    }
+
+    /* Khi cuộn xuống trên PC */
+    #navbar-primary.scrolled .nav-link {
+        color: #333333 !important;
+    }
+    #navbar-primary.scrolled .nav-link:hover {
+        color: #0d6efd !important;
+    }
+}
+
+
+/* ==========================================================================
+   3. CÁC PHẦN KHÁC (Giao diện chung)
+   ========================================================================== */
+#hero-section {
+    position: relative;
+    background-image: url(https://img.thuthuat123.com/uploads/2019/07/13/anh-hoa-sen-rat-dep_090626892.jpg); 
+    background-position: center center; 
+    background-size: cover;             
+}
+
+img#avatar-1 {
+    height: 300px;
+    object-fit: cover;
 }

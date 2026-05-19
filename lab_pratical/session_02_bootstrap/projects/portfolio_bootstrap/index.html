@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tạ Viết Hiên</title>
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/custom-theme.css">
@@ -15,20 +15,20 @@
     <header>
         <div id="navbar-phone">
             <div class="d-flex justify-content-between align-items-center w-100 p-3 ">
-                <a class="navbar-brand w-bold text-primary" href="#">  </a>
+                <a class="navbar-brand w-bold text-primary" href="#"> </a>
                 <button class="navbar-toggler" id="btn-X" type="button">
-                        <span class="hamburger-icon">X</span>
+                    <span class="hamburger-icon">X</span>
                 </button>
             </div>
             <ul class="navbar-nav text-center">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
         </div>
         <nav id="navbar-primary" class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
+            <div class="container">
                 <a class="navbar-brand fw-bold text-primary" href="#">Tạ Viết Hiên</a>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
@@ -44,17 +44,77 @@
             </div>
         </nav>
     </header>
-    <section class="hero-section">
-        <div class="container text-center text-white">
-            <h1>Xin chào, tôi là Tạ Viết Hiên</h1>
-            <p>Full-Stack Developer & UI Designer</p>
+    <section id="hero-section"
+        class="min-vh-100 d-flex align-items-center justify-content-center text-center text-white">
+        <div class="container">
+            <h1 class="display-2 fw-bold mb-3 d-flex flex-wrap text-white justify-content-center">
+                <!-- Thêm dấu cách ở cuối chữ "i'm " để không bị dính sát vào tên -->
+                <span>Hello, i'm </span>
+                <span class="text-warning">Tạ Viết Hiên</span>
+            </h1>
+            <p class="lead mb-4 opacity-75">Full-Stack Developer | UI Designer | Problem Solver</p>
         </div>
     </section>
     <main>
+        <section class="intro-section p-5 text-dark">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
+                        <h1 class="display-4 fw-bold mb-3 text-primary">Personal Introduction</h1>
+                        <p class="lead text-muted mb-4">
+                            Chúng tôi cung cấp các giải pháp công nghệ tiên tiến giúp tối ưu hóa hiệu suất công việc và
+                            nâng tầm doanh nghiệp của bạn trong kỷ nguyên số.
+                        </p>
+                    </div>
+                    <div class="col-lg-5">
+                        <img id="avatar-1"
+                            src="https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/483369155_1380784693292069_4842895388251926372_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFIU89NH3bUebqjHiBaL7yijbQ2xXhkeY6NtDbFeGR5jnqQeS1EVa8TavMxqvIK_ORML_6qHw9vo3ATGgVWax0L&_nc_ohc=zNyZLxuWcYYQ7kNvwF-8w1Z&_nc_oc=AdpB4wse94nQzDNCupjvFNGZ3aCG1oJHjoK70LiHw_TNp5zyq0IXMGlbZnDtcsSiGI3vhBtc4sqx1F-vBcshAFiT&_nc_zt=23&_nc_ht=scontent.fhan14-1.fna&_nc_gid=jBQ6J50jvrOiVqdlrQfRiQ&_nc_ss=7b2a8&oh=00_Af5ZfT0UTJZK8o2bXtIJXIQizA1soCeDwFRy7fyDaYp6pw&oe=6A1241E6"
+                            class="img-fluid rounded shadow-lg d-block mx-auto" alt="avartar">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="core-values py-5">
+            <div class="container">
+                <h2 class="text-center fw-bold mb-5 text-primary text-uppercase">Core Values</h2>
+                <div class="row g-4">
+                    <div class="col-12 col-lg-4">
+                        <h3 class="h4 fw-bold text-dark mb-3">Ambition</h3>
+                        <p class="text-muted lh-base">
+                            To me, this means pushing boundaries and challenging the current ideas and perspectives we hold. It’s
+                            about setting ambitious goals and striving to surpass them. Throughout my leadership journey, I’ve
+                            consistently pushed myself to grow, adapting and rising to new challenges. This mindset has been
+                            crucial in opening doors to opportunities and has led me to where I am today.
+                        </p>
+                    </div>
+                    
+                    <div class="col-12 col-lg-4">
+                        <h3 class="h4 fw-bold text-dark mb-3">Resilience</h3>
+                        <p class="text-muted lh-base">
+                            For me, this is about the Cambodian community. It’s about asking, how much do you truly want
+                            something, and how far are you willing to go to overcome obstacles? It’s about strengthening a
+                            community that was devastated by genocide and empowering each other to rise above adversity. This is
+                            deeply important to me because this concept represents both my community and my identity.
+                        </p>
+                    </div>
+                    
+                    <div class="col-12 col-lg-4">
+                        <h3 class="h4 fw-bold text-dark mb-3">Passion</h3>
+                        <p class="text-muted lh-base">
+                            To me, this is what fuels my motivation to get out of bed every morning. Passion isn’t just a single
+                            thing; it’s the driving force that gives me endless desire and enthusiasm. This is important because
+                            when I’m passionate about something, I’m willing to go to great lengths to achieve my goals.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>

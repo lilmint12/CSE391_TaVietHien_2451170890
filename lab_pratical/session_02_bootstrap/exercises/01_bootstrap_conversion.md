@@ -329,8 +329,8 @@
 
 ## ✅ Success Criteria
 
-- [ ] Bootstrap CDN loaded
-- [ ] Navbar collapse works on mobile
+- [v] Bootstrap CDN loaded
+- [v] Navbar collapse works on mobile
 - [ ] Grid converted to Bootstrap cols
 - [ ] Responsive breakpoints maintained
 - [ ] 4 commits made
