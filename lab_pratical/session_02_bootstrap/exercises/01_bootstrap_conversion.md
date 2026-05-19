@@ -331,9 +331,9 @@
 
 - [v] Bootstrap CDN loaded
 - [v] Navbar collapse works on mobile
-- [ ] Grid converted to Bootstrap cols
-- [ ] Responsive breakpoints maintained
-- [ ] 4 commits made
+- [v] Grid converted to Bootstrap cols
+- [v] Responsive breakpoints maintained
+- [v] 4 commits made
 
 ---
 
