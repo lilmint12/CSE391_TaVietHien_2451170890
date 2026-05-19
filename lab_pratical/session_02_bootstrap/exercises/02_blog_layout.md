@@ -139,11 +139,11 @@
 
 ## ✅ Success Criteria
 
-- [ ] 2-column layout (blog posts + sidebar)
-- [ ] Sidebar sticky on desktop
-- [ ] 3 blog post cards displayed
-- [ ] 4 sidebar widgets (search, categories, recent, tags)
-- [ ] Responsive (sidebar below posts on mobile)
+- [v] 2-column layout (blog posts + sidebar)
+- [v] Sidebar sticky on desktop
+- [v] 3 blog post cards displayed
+- [v] 4 sidebar widgets (search, categories, recent, tags)
+- [v] Responsive (sidebar below posts on mobile)
 
 ---
 

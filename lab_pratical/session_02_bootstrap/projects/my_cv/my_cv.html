@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạ Viết Hiên | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+        .card {
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body class="bg-light text-dark">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-info" href="#">TVH Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#core-values">Core Values</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section min-vh-100 d-flex align-items-center text-white pt-5">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-4 text-center">
+                    <div class="p-3 bg-white d-inline-block rounded-circle shadow-lg">
+                        <img src="https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/483369155_1380784693292069_4842895388251926372_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFIU89NH3bUebqjHiBaL7yijbQ2xXhkeY6NtDbFeGR5jnqQeS1EVa8TavMxqvIK_ORML_6qHw9vo3ATGgVWax0L&_nc_ohc=zNyZLxuWcYYQ7kNvwF-8w1Z&_nc_oc=AdpB4wse94nQzDNCupjvFNGZ3aCG1oJHjoK70LiHw_TNp5zyq0IXMGlbZnDtcsSiGI3vhBtc4sqx1F-vBcshAFiT&_nc_zt=23&_nc_ht=scontent.fhan14-1.fna&_nc_gid=jBQ6J50jvrOiVqdlrQfRiQ&_nc_ss=7b2a8&oh=00_Af5ZfT0UTJZK8o2bXtIJXIQizA1soCeDwFRy7fyDaYp6pw&oe=6A1241E6" 
+                             class="rounded-circle img-fluid shadow" alt="Tạ Viết Hiên" style="width: 250px; height: 250px; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-8 text-center text-lg-start">
+                    <span class="badge bg-warning text-dark mb-2 px-3 py-2 fw-bold text-uppercase">Sinh viên năm 2 CNTT</span>
+                    <h1 class="display-3 fw-bold mb-2">Tạ Viết Hiên</h1>
+                    <p class="lead mb-4 opacity-75">Full-Stack Developer | UI Designer | Problem Solver. Đam mê xây dựng các giải pháp công nghệ tối ưu và nâng cao trải nghiệm người dùng.</p>
+                    <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
+                        <a href="#contact" class="btn btn-info text-dark fw-bold px-4 py-2"><i class="bi bi-envelope-fill me-2"></i>Liên hệ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container py-5">
+        
+        <section id="about" class="py-5 mb-4">
+            <div class="card shadow-sm border-0 p-4 p-md-5">
+                <h2 class="fw-bold text-primary border-bottom pb-3 mb-4"><i class="bi bi-person-fill me-2"></i>Thông Tin Cá Nhân</h2>
+                <div class="row g-4">
+                    <div class="col-sm-6 col-md-4">
+                        <p class="mb-1 text-muted">Họ và tên</p>
+                        <p class="fw-bold">Tạ Viết Hiên</p>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <p class="mb-1 text-muted">Hiện tại là</p>
+                        <p class="fw-bold text-primary">Sinh viên năm 2</p>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <p class="mb-1 text-muted">Địa chỉ</p>
+                        <p class="fw-bold">Hà Nội, Việt Nam</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="py-5 mb-4">
+            <h2 class="fw-bold text-primary mb-4 text-center"><i class="bi bi-mortarboard-fill me-2"></i>Học Vấn</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-8">
+                    <div class="card h-100 shadow-sm border-0 p-4 border-start border-primary border-4">
+                        <span class="text-primary fw-bold mb-2">Hiện tại (Sinh viên năm 2)</span>
+                        <h4 class="fw-bold">Trường Đại học Thủy lợi (TLU)</h4>
+                        <p class="text-muted mb-0">Chuyên ngành: Công nghệ thông tin (Information Technology)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-5 mb-4 bg-white rounded shadow-sm p-4 p-md-5">
+            <h2 class="fw-bold text-primary text-center mb-5"><i class="bi bi-gear-fill me-2"></i>Kỹ Năng Chuyên Môn</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h5 class="fw-bold text-secondary mb-3"><i class="bi bi-code-slash me-2"></i>Phát triển Phần mềm</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-transparent px-0 border-0"><i class="bi bi-check-circle-fill text-success me-2"></i>Lập trình ứng dụng hệ thống & quản lý</li>
+                        <li class="list-group-item bg-transparent px-0 border-0"><i class="bi bi-check-circle-fill text-success me-2"></i>Thiết kế cơ sở dữ liệu hệ thống</li>
+                        <li class="list-group-item bg-transparent px-0 border-0"><i class="bi bi-check-circle-fill text-success me-2"></i>Tư duy giải quyết bài toán logic cấu trúc tốt</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="fw-bold text-secondary mb-3"><i class="bi bi-window me-2"></i>Giao diện & Web Front-End</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-transparent px-0 border-0"><i class="bi bi-check-circle-fill text-success me-2"></i>Xây dựng layout Responsive chuẩn với Framework Bootstrap</li>
+                        <li class="list-group-item bg-transparent px-0 border-0"><i class="bi bi-check-circle-fill text-success me-2"></i>Thiết kế UI/UX giao diện tinh tế, tập trung vào trải nghiệm người dùng</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="core-values" class="core-values py-5 bg-white border-top rounded shadow-sm p-4 p-md-5 mb-4">
+            <div class="container">
+                <h2 class="fw-bold mb-5 text-primary text-uppercase text-center"><i class="bi bi-heart-fill me-2"></i>Giá trị cốt lõi</h2>
+                <div class="row g-4">
+                    <div class="col-12 col-lg-4">
+                        <h3 class="h4 fw-bold text-dark mb-3">Ambition</h3>
+                        <p class="text-muted lh-base">
+                            Đối với tôi, điều này có nghĩa là luôn phá bỏ các giới hạn và thách thức những giải pháp lối mòn. Tôi đặt ra những mục tiêu lớn trong lập trình, không ngừng cập nhật kiến thức mới để nâng cao chất lượng sản phẩm.
+                        </p>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <h3 class="h4 fw-bold text-dark mb-3">Resilience</h3>
+                        <p class="text-muted lh-base">
+                            Lập trình là đối mặt với bug và các bài toán khó. Sự kiên trì giúp tôi không bỏ cuộc trước những lỗi hệ thống phức tạp, luôn đào sâu tìm hiểu nguyên nhân cốt lõi để tối ưu hóa mã nguồn bền vững nhất.
+                        </p>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <h3 class="h4 fw-bold text-dark mb-3">Passion</h3>
+                        <p class="text-muted lh-base">
+                            Đam mê công nghệ là nguồn năng lượng thôi thúc tôi ngồi vào bàn làm việc mỗi ngày. Nó mang lại nguồn cảm hứng bất tận để tôi học hỏi, thử nghiệm công nghệ mới và tạo ra sản phẩm thực sự giá trị.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-5">
+            <div class="card bg-dark text-white p-4 p-md-5 shadow-sm text-center">
+                <h2 class="fw-bold text-warning mb-3"><i class="bi bi-telephone-outbound-fill me-2"></i>Liên Hệ & Cộng Tác</h2>
+                <p class="lead opacity-75 mb-4">Bạn đang tìm kiếm một cộng tác viên lập trình năng động hoặc muốn trao đổi về dự án? Hãy kết nối với tôi!</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <span class="badge bg-secondary p-3 fs-6"><i class="bi bi-geo-alt-fill me-2 text-danger"></i>Đại học Thủy lợi - Hà Nội</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-1 small">&copy; 2026 Tạ Viết Hiên. All Rights Reserved.</p>
+            <p class="mb-0 text-muted small">Designed with Bootstrap 5.3.3</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
