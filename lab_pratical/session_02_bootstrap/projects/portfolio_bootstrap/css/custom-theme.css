@@ -48,10 +48,9 @@
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* --- Trạng thái khi cuộn chuột TRÊN MOBILE --- */
 #navbar-primary.scrolled,
 #navbar-phone.scrolled {
-    background-color: #ffffff !important; /* Cuộn xuống biến thành màu trắng */
+    background-color: #ffffff !important; 
 }
 #navbar-primary.scrolled .navbar-brand {
     color: #0d6efd !important;
@@ -71,25 +70,20 @@
 
 
 /* ==========================================================================
-   2. CẤU HÌNH CHO PC / LAPTOP (Áp dụng từ màn hình màn hình 992px trở lên)
    ========================================================================== */
 @media screen and (min-width: 992px) {
-    /* Ẩn hoàn toàn menu mobile tự chế */
     #navbar-phone {
         display: none !important; 
     }
     
-    /* Hiện lại menu mặc định cấu trúc ngang của Bootstrap */
     #navbarNav {
         display: flex !important;
     }
     
-    /* Ẩn nút Hamburger ☰ đi */
     #btn-list {
         display: none !important;
     }
 
-    /* Định hình lại màu chữ hover trên PC lúc chưa cuộn */
     #navbar-primary .nav-link:hover {
         color: #ffc107 !important;
     }
@@ -105,7 +99,6 @@
 
 
 /* ==========================================================================
-   3. CÁC PHẦN KHÁC (Giao diện chung)
    ========================================================================== */
 #hero-section {
     position: relative;

@@ -141,3 +141,25 @@ Tại sao trình duyệt KHÔNG đọc được file .scss? Cần bước gì đ
     1.Cài đặt trình biên dịch: Sử dụng các công cụ như Sass (Dart Sass), hoặc các extension trong VS Code (như Live Sass Compiler).
     2.Quá trình Compile: Trình biên dịch sẽ quét file .scss, xử lý tất cả các biến, mixin, nesting... và "duỗi thẳng" chúng ra thành mã CSS chuẩn.
     3.Kết nối: Bạn sẽ nhúng file .css (kết quả sau khi compile) vào file HTML của mình.
+
+PHẦN C — PHÂN TÍCH (20 điểm)
+Câu C1 (10đ) — Phân tích trang web thực
+## Minh họa giao diện Responsive
+
+### 📱 Giao diện Mobile
+![Giao diện Mobile](./screenshots/mobile.png)
+
+navigation hamburger
+Lưới content 1 cột
+Các phần tử a,button,sidebar tìm kiếm ẩn trên mobile
+font-size giảm nhẹ và line-heigh tăng nhẹ để chữ dễ đọc
+### 📟 Giao diện Tablet
+![Giao diện Tablet](./screenshots/tablet.png)
+
+### 💻 Giao diện Desktop
+![Giao diện Desktop](./screenshots/desktop.png)
+
+3. Mở DevTools → Styles, tìm @media rules. Chụp screenshot ít nhất 2 media queries trang đó dùng.
+
+![media1](./screenshots/media1.png)
+![media2](./screenshots/media2.png)

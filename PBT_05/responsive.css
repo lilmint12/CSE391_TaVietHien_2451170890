@@ -4,6 +4,15 @@
 }
 .header nav{
     display: none;
+    grid-template-rows: 0fr; /* Khóa chiều cao về 0 */
+    transition: grid-template-rows 0.3s ease;
+    overflow: hidden;
+    background-color: antiquewhite;
+}
+nav a{
+    width: 100%;
+    text-align: center;
+    text-decoration: none;    
 }
 .product-grid{
     display: grid;
@@ -15,6 +24,7 @@
     align-items: center;
     display: flex;
 } 
+
 img{
     max-width: 100%;
     height: auto;
@@ -28,7 +38,12 @@ footer{
 .ads-bar{
     display: none;
 }
-
+.menu-checkbox {
+  display: none;
+}
+.menu-checkbox:checked~nav{
+    display: grid;
+}
 @media screen and (min-width:768px){
     .header nav{
         display:flex;
@@ -78,5 +93,4 @@ footer{
         grid-template-columns: 200px 1fr 200px;
         text-align: center;
     }
-
 }

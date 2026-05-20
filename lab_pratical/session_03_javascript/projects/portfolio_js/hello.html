@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello JavaScript</title>
+</head>
+
+<body>
+    <h1>Bài tập đầu tiên với JavaScript</h1>
+    <p>Mở Console (F12 → Console) để xem kết quả</p>
+
+    <script>
+        console.log("Bài 01: Xin chào thế giới!");
+        console.log("Tôi đang học JavaScript");
+        console.log(2026);
+
+        console.log("Bài 0.2 — Khai báo biến (10 phút")
+
+        let ten = "Minh";
+        let tuoi = 20;
+        let laSinhVien = true;
+
+        console.log("Tên:", ten);
+        console.log("Tuổi:", tuoi);
+        console.log("Sinh viên:", laSinhVien);
+
+
+        tuoi = 21;
+        console.log("Tuổi mới:", tuoi);
+
+        const PI = 3.14159;
+        const TEN_TRUONG = "Đại học Thủy Lợi";
+
+        console.log("PI =", PI);
+        console.log("Trường:", TEN_TRUONG);
+
+        var monHoc = "CSE391";
+        console.log("Môn:", monHoc);
+        // **Câu hỏi phân biệt:**
+        // | Câu hỏi | `let` | `const` | `var` |
+        // |---------|-------|---------|-------|
+        // | Có thể thay đổi giá trị? | Có | Không | Có |
+        // | Có thể khai báo lại? | Không | Không | Có |
+        // | Nên dùng trong code mới? | có | có  | Tránh |
+
+        // ### Bài 0.3 — Các kiểu dữ liệu (10 phút)
+        // ```javascript
+        // // ===== STRING — Chuỗi =====
+        let hoTen = "Nguyễn Văn A";     // Dùng dấu ""
+        let diaChi = 'Hà Nội';          // Dùng dấu ''
+        let loiChao = `Xin chào ${hoTen}`;
+
+        console.log(typeof hoTen);      // "string"
+        console.log(loiChao);           // "Xin chào Nguyễn Văn A"
+
+        // ===== NUMBER — Số =====
+        let soNguyen = 42;
+        let soThuc = 3.14;
+        let am = -10;
+        let voCuc = Infinity;
+
+        console.log(typeof soNguyen);   // "number"
+
+        // ===== BOOLEAN — Đúng/Sai =====
+        let laTrue = true;
+        let laFalse = false;
+
+        console.log(typeof laTrue);     // "boolean"
+
+        // ===== NULL & UNDEFINED =====
+        let giaTriNull = null;          // "không có gì"
+        let chuaGanGiaTri;              // undefined (chưa gán)
+
+        console.log(typeof giaTriNull);   // "object" 
+        console.log(typeof chuaGanGiaTri); // "undefined"
+
+        // ===== Kiểm tra kiểu =====
+        console.log("42 là:", typeof 42);          // number
+        console.log("'42' là:", typeof "42");      // string
+        console.log("true là:", typeof true);      // boolean
+        console.log("**Bài tập con:** Khai báo biến cho các thông tin sau và in ra console:")
+        // TODO: Khai báo các biến sau
+        // 1. Tên môn học (string)
+        // 2. Số tín chỉ (number)
+        // 3. Có phải bắt buộc không? (boolean)
+        // 4. Điểm số (number, chưa có → undefined)
+        // ```
+        // ** Trả lời **
+        // ```
+        // 1. Tên môn học (string)
+        let tenMonHoc = "Lập trình Web";
+
+        // 2. Số tín chỉ (number)
+        let soTinChi = 3;
+
+        // 3. Có phải bắt buộc không? (boolean)
+        let laBatBuoc = true;
+
+        // 4. Điểm số (number, chưa có → undefined)
+        let diemSo;
+        // --- Kiểm tra kết quả hiển thị ---
+        console.log("Môn học: " + tenMonHoc);
+        console.log("Số tín chỉ: " + soTinChi);
+        console.log("Bắt buộc: " + laBatBuoc);
+        console.log("Điểm số hiện tại: " + diemSo);
+        //--Kết quả
+        //     Môn học: Lập trình Web
+        //     Số tín chỉ: 3
+        //     Bắt buộc: true
+        //     Điểm số hiện tại: undefined
+        // ```
+        console.log(" Bài 0.4 — Template Literal (10 phút)")
+
+        // **Yêu cầu:** Nối chuỗi và chèn biến vào chuỗi.
+
+        // ```javascript
+        ho = "Nguyễn";
+        ten = "Minh";
+        tuoi = 20;
+        diem = 8.5;
+
+        let cau1 = "Tên: " + ho + " " + ten + ", Tuổi: " + tuoi;
+        console.log(cau1);
+
+        // ✅ Cách mới — Template Literal (backtick `)
+        let cau2 = `Tên: ${ho} ${ten}, Tuổi: ${tuoi}`;
+        console.log(cau2);
+
+        // Tính toán trong template literal
+        let cau3 = `${ho} ${ten} được ${diem} điểm. Năm sau ${ten} sẽ ${tuoi + 1} tuổi.`;
+        console.log(cau3);
+
+        // In nhiều dòng
+        let thongBao = `
+        === THÔNG TIN SINH VIÊN ===
+        Họ tên : ${ho} ${ten}
+        Tuổi    : ${tuoi}
+        Điểm    : ${diem}
+        Xếp loại: ${diem >= 8 ? "Giỏi" : diem >= 6.5 ? "Khá" : "Trung bình"}
+        ===========================
+        `;
+        console.log(thongBao);
+
+
+        console.log("**Bài tập con:** Tạo chuỗi template hiển thị hóa đơn mua hàng:")
+        let sanPham = "Laptop";
+        let soLuong = 2;
+        let donGia = 15000000;
+
+        // TODO: Tạo chuỗi template hiển thị:
+        // "Hóa đơn: 2 x Laptop = 30,000,000 VNĐ"
+        let hoadon = `Hóa đơn: ${soLuong} x ${sanPham} = ${donGia}}`
+        console.log(hoadon)
+
+        console.log("Bài 0.5 — Toán tử số học (10 phút)")
+
+        let a = 15;
+        let b = 4;
+        // Phép cộng, trừ, nhân, chia
+        console.log(`${a} + ${b} =`, a + b);    // 19
+        console.log(`${a} - ${b} =`, a - b);    // 11
+        console.log(`${a} * ${b} =`, a * b);    // 60
+        console.log(`${a} / ${b} =`, a / b);    // 3.75
+        console.log(`${a} % ${b} =`, a % b);    // 3 (chia lấy dư)
+        console.log(`${a} ** ${b} =`, a ** b);  // 50625 (lũy thừa)
+
+        // Phép gán kết hợp
+        let x = 10;
+        x += 5;   // x = x + 5 → 15
+        x -= 3;   // x = x - 3 → 12
+        x *= 2;   // x = x * 2 → 24
+        x /= 4;   // x = x / 4 → 6
+        console.log("x =", x);  // 6
+
+        // Tăng/giảm 1
+        let dem = 0;
+        dem++;     // dem = dem + 1 → 1
+        dem++;     // → 2
+        dem--;     // dem = dem - 1 → 1
+        console.log("dem =", dem);  // 1
+
+
+        console.log(" **Bài tập con — Tính diện tích hình tròn:**")
+
+        // const PI = 3.14159;
+        let banKinh = 5;
+
+        // TODO: Tính diện tích = PI * r^2
+        console.log("Diện tích : ", PI * banKinh * banKinh)
+        // TODO: Tính chu vi = 2 * PI * r
+        console.log("Tính chu vi : ", PI * 2 * banKinh)
+        // TODO: In kết quả ra console
+
+        console.log("### Bài 0.6 — Toán tử so sánh (10 phút)")
+
+        // **Yêu cầu:** So sánh giá trị và hiểu sự khác biệt `==` vs `===`.
+
+        // ```javascript
+        // ==  (so sánh giá trị, ÉP KIỂU)
+        // === (so sánh giá trị + kiểu, KHÔNG ép kiểu)
+
+        console.log(5 == "5");      // true  (ép "5" thành 5)
+        console.log(5 === "5");     // false (number ≠ string)
+        console.log(true == 1);     // true  (ép true thành 1)
+        console.log(true === 1);    // false
+
+        // ❌ Luôn dùng === trong code thực tế!
+        // == có thể gây bug khó tìm
+
+        // Các toán tử so sánh
+        console.log(10 > 5);        // true
+        console.log(10 < 5);        // false
+        console.log(10 >= 10);      // true
+        console.log(10 <= 9);       // false
+        console.log(10 != 5);       // true
+        console.log(10 !== "10");   // true
+
+        // Toán tử logic
+        console.log(true && true);   // true  (AND — cả hai đều đúng)
+        console.log(true && false);  // false
+        console.log(true || false);  // true  (OR — một trong hai đúng)
+        console.log(false || false); // false
+        console.log(!true);          // false (NOT — đảo ngược)
+        //         ```
+
+        // // **Bài tập con — Kiểm tra điều kiện:**
+        // // ```javascript
+        diem = 7.5;
+        diemChuyenCan = 9;
+
+        // TODO: Kiểm tra và in ra:
+        // 1. Điểm >= 5 VÀ điểm chuyên cần >= 8 → "Đạt"
+        // 2. Ngược lại → "Không đạt"
+        // 3. Điểm >= 8.5 → "Giỏi"
+        // 4. Điểm >= 7 → "Khá"
+        // 5. Điểm >= 5 → "Trung bình"
+        // 6. Ngược lại → "Yếu"
+        if (diem >= 5 && diemChuyenCan >= 8) {
+            console.log("Đạt");
+        } else {
+            console.log("Không đạt");
+        }
+
+        if (diem >= 8.5) {
+            console.log("Giỏi");
+        } else if (diem >= 7) {
+            console.log("Khá");
+        } else if (diem >= 5) {
+            console.log("Trung bình");
+        } else {
+            console.log("Yếu");
+        }
+
+        console.log("Bài 0.7 — Kiểu dữ liệu Array (10 phút)")
+
+        // **Yêu cầu:** Làm quen với mảng — cấu trúc dữ liệu quan trọng nhất.
+
+        // ```javascript
+        // // ===== KHAI BÁO MẢNG =====
+        let mOnHoc = ["Toán", "Lý", "Hóa", "Sinh"];
+        let dIemSo = [8, 7, 9, 6.5, 8.5];
+        let honHop = ["Minh", 20, true, null]; // Mảng hỗn hợp
+
+        // ===== TRUY CẬP PHẦN TỬ =====
+        console.log(mOnHoc[0]); // "Toán" (chỉ số bắt đầu từ 0)
+        console.log(mOnHoc[1]); // "Lý"
+        console.log(mOnHoc.length); // 4 (độ dài mảng)
+        console.log(mOnHoc[mOnHoc.length - 1]); // "Sinh" (phần tử cuối)
+
+        // ===== THÊM / XÓA =====
+        mOnHoc.push("Anh"); // Thêm vào cuối → ["Toán","Lý","Hóa","Sinh","Anh"]
+        mOnHoc.pop(); // Xóa cuối → ["Toán","Lý","Hóa","Sinh"]
+        mOnHoc.unshift("GDCD"); // Thêm vào đầu → ["GDCD","Toán","Lý","Hóa","Sinh"]
+        mOnHoc.shift();// Xóa đầu → ["Toán","Lý","Hóa","Sinh"]
+
+        // ===== DUYỆT MẢNG =====
+        // Cách 1: for loop
+        for (let i = 0; i < dIemSo.length; i++) {
+            console.log(`Môn ${i + 1}: ${dIemSo[i]} điểm`);
+        }
+
+        // Cách 2: forEach (hay dùng hơn)
+        dIemSo.forEach((dIem, index) => {
+            console.log(`Môn ${index + 1}: ${dIem} điểm`);
+        });
+
+        // ===== TÌM KIẾM =====
+        console.log(mOnHoc.includes("Lý"));  // true
+        console.log(mOnHoc.indexOf("Hóa"));  // 2 (vị trí)
+        console.log(mOnHoc.indexOf("Anh")); // -1 (không tìm thấy)
+
+        // ===== SẮP XẾP =====
+        let so = [3, 1, 4, 1, 5, 9, 2, 6];
+        so.sort((a, b) => a - b); // Tăng dần → [1,1,2,3,4,5,6,9]
+        console.log(so);
+
+    // TODO: Tạo mảng 5 món ăn yêu thích
+    // 1. In ra món đầu tiên và cuối cùng
+    // 2. Thêm 1 món vào đầu
+    // 3. Xóa món cuối cùng
+    // 4. Duyệt mảng và in "Món i: ten mon"
+    // 5. Kiểm tra "Phở" có trong mảng không? 
+        let monAn = ['Phở','Bún bò Huế','Thịt kho tàu','Cơm','Dưa bở']
+        console.log(monAn)
+        monAn.unshift('Trứng luộc')
+        console.log(monAn)
+        monAn.pop()
+        console.log(monAn)
+        monAn.forEach((ten_mon, index)=>{
+            console.log(`Tên món ${index}: `+ten_mon)
+        })
+        if(monAn.includes('Phở'))
+        {
+            console.log(true)
+        }
+console.log(" Bài 0.8 — Kiểu dữ liệu Object (10 phút)")
+
+// **Yêu cầu:** Làm quen với object — lưu trữ dữ liệu có cấu trúc.
+
+
+// ===== KHAI BÁO OBJECT =====
+    let sinhVien = {
+        hoTen: "Nguyễn Văn Minh",
+        tuoi: 20,
+        mssv: "20240001",
+        diem: [8, 7.5, 9],
+        laSinhVien: true
+    };
+
+    // ===== TRUY CẬP THUỘC TÍNH =====
+    console.log(sinhVien.hoTen);        // "Nguyễn Văn Minh" (dấu chấm)
+    console.log(sinhVien["tuoi"]);      // 20 (dấu ngoặc vuông)
+    console.log(sinhVien.diem[0]);      // 8 (truy cập mảng lồng)
+
+    // ===== THÊM / SỬA THUỘC TÍNH =====
+    sinhVien.email = "minh@example.com"; // Thêm mới
+    sinhVien.tuoi = 21;                  // Sửa
+    delete sinhVien.laSinhVien;          // Xóa
+
+    // ===== DUYỆT OBJECT =====
+    for (let key in sinhVien) {
+        console.log(`${key}: ${sinhVien[key]}`);
+    }
+
+    // ===== OBJECT METHODS =====
+    console.log(Object.keys(sinhVien));   // ["hoTen", "tuoi", "mssv", "diem", "email"]
+    console.log(Object.values(sinhVien)); // ["Nguyễn Văn Minh", 21, "20240001", ...]
+
+// **Bài tập con — Tạo hồ sơ cá nhân:**
+
+    // TODO: Tạo object "hoSo" chứa:
+    // - hoTen (string)
+    // - tuoi (number)
+    // - nganh (string)
+    // - soThich (array: 3 sở thích)
+    // - diaChi (object lồng: { tinh, quan, duong })
+
+    // 1. In ra: "Tôi là [hoTen], [tuoi] tuổi, học ngành [nganh]"
+    // 2. In ra sở thích đầu tiên
+    // 3. In ra địa chỉ đầy đủ
+    // 4. Thêm thuộc tính "email"
+    let hoSo= {
+        hoTen : "Tạ Hiên",
+        tuoi :19,
+        nganh: 'cntt',
+        soThich: 'lo',
+        diaChi : { tinh :'Hà Tây', quan:'Ứng Hòa', duong :'Cầu lão'}
+    }
+    // 1. In ra: "Tôi là [hoTen], [tuoi] tuổi, học ngành [nganh]"
+    console.log(`Tôi là ${hoSo.hoTen}, ${hoSo.tuoi} tuổi, học ngành ${hoSo.nganh}`);
+
+    // 2. In ra sở thích đầu tiên
+    console.log("Sở thích đầu tiên: " + hoSo.soThich[0]);
+
+    // 3. In ra địa chỉ đầy đủ
+    console.log(`Địa chỉ đầy đủ: ${hoSo.diaChi.duong}, ${hoSo.diaChi.quan}, ${hoSo.diaChi.tinh}`);
+
+    // 4. Thêm thuộc tính "email"
+    hoSo.email = "hien.it.tlu@gmail.com"; 
+    console.log("Email vừa thêm:", hoSo.email);
+    console.log(" Bài 0.9 — Hàm cơ bản (10 phút)")
+
+    // **Yêu cầu:** Viết và gọi hàm — khối xây dựng cơ bản của lập trình.
+
+    // ===== KHAI BÁO HÀM =====
+    function chaoHoi(ten) {
+        return `Xin chào, ${ten}! Chào mừng đến với JavaScript!`;
+    }
+
+    console.log(chaoHoi("Minh"));
+    console.log(chaoHoi("Lan"));
+
+    // ===== HÀM CÓ NHIỀU THAM SỐ =====
+    function tinhTong(a, b) {
+        return a + b;
+    }
+
+    function tinhDTChuNhat(dai, rong) {
+        return dai * rong;
+    }
+
+    console.log("Tổng:", tinhTong(10, 20));           // 30
+    console.log("Diện tích:", tinhDTChuNhat(5, 3));   // 15
+
+    // ===== HÀM CÓ GIÁ TRỊ MẶC ĐỊNH =====
+    function tinhDiemTB(diem1, diem2, diem3, heSo = 1) {
+        return (diem1 + diem2 + diem3) / 3 * heSo;
+    }
+
+    console.log("Điểm TB:", tinhDiemTB(8, 7, 9));       // 8
+    console.log("Điểm TB x1.1:", tinhDiemTB(8, 7, 9, 1.1)); // 8.8
+
+    // ===== ARROW FUNCTION (ES6) =====
+    const binhPhuong = (so) => so * so;
+    const laChan = (so) => so % 2 === 0;
+
+    console.log("5² =", binhPhuong(5));       // 25
+    console.log("4 chẵn?", laChan(4));        // true
+    console.log("7 chẵn?", laChan(7));        // false
+
+// TODO: Viết các hàm sau:
+// 1. maxHaiSo(a, b) → trả về số lớn hơn
+    function maxHaiSo(a, b){
+        if(a>=b)
+            return a
+        else
+            return b
+    }
+    console.log(maxHaiSo(7,10))
+// 2. laNamNhuan(nam) → true nếu năm nhuận
+//    (chia hết cho 4, không chia hết cho 100, hoặc chia hết cho 400)
+    function laNamNhuan(nam)
+    {
+        if((nam % 4 === 0 && nam % 100 !==0)||(nam%400===0))
+            return true   
+        else 
+            return false
+    }
+    console.log(laNamNhuan(40))
+// 3. gioiThieu(hoTen, tuoi, nganh) → "Tôi là ..., ... tuổi, học ..."
+    function gioiThieu(hoTen, tuoi, nganh)
+    {
+        console.log()
+    }
+// 4. tinhGiaBan(giaGoc, giamGia = 0) → giá sau giảm (%)    
+    
+    </script>
+</body>
+</html>
