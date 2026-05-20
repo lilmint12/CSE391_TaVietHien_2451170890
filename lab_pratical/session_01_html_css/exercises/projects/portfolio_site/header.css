@@ -1,0 +1,70 @@
+
+header{
+    box-sizing: border-box;
+    position: sticky;
+    top:0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;          
+    background: var(--color-light);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    font-family: var(--font-main);    
+}
+.logo{
+    color: var(--color-primary);
+    padding-left: 10%;
+}
+nav{
+    padding-right: 10%;
+    display: flex;
+    gap: 18px;
+}
+nav a{
+    color: var(--color-dark);
+    text-decoration: none;
+}
+nav a:hover{
+    color:rgb(0, 8, 255) ;
+    text-decoration: underline;
+}
+.hamburger-icon {
+    display: none; 
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #333;
+}
+.menu-toggle { 
+    display: none; 
+    font-size: 2rem;
+    cursor: pointer;
+    padding-right: 10%;
+    color: #333;
+}
+@media screen and (max-width: 768px) {
+    nav {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Sổ xuống ngay dưới header */
+        left: 0;
+        width: 100%;
+        background: var(--color-light);
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    nav a {
+        display: block; 
+        padding: 10px 0;
+        text-align: center;
+    }
+    .hamburger-icon {
+        display: block;
+        padding-right: 10%;
+    }
+    .menu-toggle:checked ~ nav {
+        display: flex;
+    }
+}
+

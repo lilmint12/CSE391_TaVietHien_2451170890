@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio_site</title>
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="hero.css">
+    <link rel="stylesheet" href="about.css">    
+    <link rel="stylesheet" href="skills.css">    
+    
+</head>
+<body>
+    <header>
+        <div class="logo">YourName</div>
+        <input type="checkbox" id="btn-menu" class="menu-toggle">
+        <label for="btn-menu" class="hamburger-icon">☰</label>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div>
+                <div>
+                    <h1 >Hi, I'm <span class="name">Tạ Viết Hiên</span></h1>
+                </div>
+                <div>
+                    <p>Full-Stack Developer | UI Designer | Problem Solver</p>
+                    <a href="#portfolio" class="cta-button">View My Work</a>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/506350006_1450123076358230_6778839424466942528_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeEEGQ1KcWcwlIL1leGnfTz9uVnWjkvL-ju5WdaOS8v6O9hYOsopOORDTnypRcAAPaZP3VpIWnagLjrxSKqt1k1j&_nc_ohc=ECvEsh83GJkQ7kNvwF7o0Yg&_nc_oc=Adra0CQPg1HyA6zLz1RmAUxJYHbQNl47DgiO6y7K8NAtTTIRHtI728CjtyUjwY1jedg&_nc_zt=23&_nc_ht=scontent.fhan14-1.fna&_nc_gid=ublkVUEfmhTwGYNaooea0g&_nc_ss=7b2a8&oh=00_Af6HJT8OTwQlPszhBm7L_EhjFfoYLoCS7j15vyEijtESaw&oe=6A0995FF" alt="Profile Photo">
+                    </div>
+                    <div class="about-content">
+                        <h2>About Me</h2>
+                        <p class="lead">I'm a passionate developer with 3+ years of experience building web applications.</p>
+                        <p>Specialized in Frontend development with React and Vue. Also experienced in Backend with Node.js and Python.</p>       
+                    </div>
+                </div>
+            </div>
+        </section> 
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2>My Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <span class="skill-name">HTML5</span>
+                        <span class="skil-percent">95%</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" 
+                            style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Thêm CSS, JavaScript, React, Node.js -->
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

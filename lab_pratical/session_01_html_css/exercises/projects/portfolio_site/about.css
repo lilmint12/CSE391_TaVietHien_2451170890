@@ -1,0 +1,34 @@
+.about-grid{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    justify-items: center;
+    gap: 3rem;
+    padding: 3rem;
+}
+@media screen and (max-width:768px) {
+    .about-grid{
+        grid-template-columns: 100%;
+        text-align: center;
+    }
+}
+.about-image{
+    padding:5px;
+    border-radius: 50%;
+    background-color: var(--color-secondary);
+    align-items: center;
+}
+.about-image img{
+    width: 300px;    
+    height: 300px;
+    border-radius: 50%;
+}
+.about-content{
+}
+.about-content h2{
+    font-size: 1.25rem;
+    font-weight: 300px;
+    color: var(--color-dark);
+}
+.about-content p{
+    color: var(--color-text);
+}
