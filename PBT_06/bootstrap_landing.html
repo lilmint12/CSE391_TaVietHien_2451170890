@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiên Boutique - Bootstrap Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center text-primary" href="#">
+                <img src="https://static-00.iconduck.com/assets.00/brand-bootstrap-icon-512x512-u88647l3.png" alt="Bootstrap logo" class="rounded-circle me-2" style="width: 35px; height: 35px; object-fit: cover;">
+                <span>HIÊN BOUTIQUE</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Cửa hàng</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Bộ sưu tập</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+                </ul>
+                <form class="d-flex me-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit">🔍</button>
+                </form>
+                <div class="position-relative p-2 text-white" style="cursor: pointer;">
+                    <span class="fs-5">🛒</span>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="heroCarousel" class="carousel slide shadow" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active bg-secondary text-white" style="height: 500px; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200') center/cover no-repeat;">
+                <div class="carousel-caption d-flex flex-column h-100 justify-content-center align-items-center">
+                    <span class="badge bg-primary text-uppercase px-3 py-2 mb-3 tracking-wider">Xu hướng 2026</span>
+                    <h1 class="display-3 fw-bold text-uppercase">BST Xuân Hè 2026</h1>
+                    <p class="lead mb-4">Phong cách tinh tế, tối giản, nâng tầm ngôn ngữ thời trang hiện đại.</p>
+                    <button class="btn btn-primary btn-lg px-4 fw-bold shadow-sm">Mua Ngay</button>
+                </div>
+            </div>
+            <div class="carousel-item bg-secondary text-white" style="height: 500px; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1479064555552-3ef4979f8908?w=1200') center/cover no-repeat;">
+                <div class="carousel-caption d-flex flex-column h-100 justify-content-center align-items-center">
+                    <span class="badge bg-danger text-uppercase px-3 py-2 mb-3 tracking-wider">Ưu đãi mùa lễ hội</span>
+                    <h1 class="display-3 fw-bold text-uppercase">Giảm Giá Đến 50%</h1>
+                    <p class="lead mb-4">Cơ hội duy nhất sở hữu các siêu phẩm items với mức giá cực kỳ ưu đãi.</p>
+                    <button class="btn btn-danger btn-lg px-4 fw-bold shadow-sm">Xem Khuyến Mãi</button>
+                </div>
+            </div>
+            <div class="carousel-item bg-secondary text-white" style="height: 500px; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1200') center/cover no-repeat;">
+                <div class="carousel-caption d-flex flex-column h-100 justify-content-center align-items-center">
+                    <span class="badge bg-warning text-dark text-uppercase px-3 py-2 mb-3 tracking-wider">New Arrivals</span>
+                    <h1 class="display-3 fw-bold text-uppercase">Streetwear Cực Chất</h1>
+                    <p class="lead mb-4">Khẳng định chất riêng năng động thông qua những bản phối đầy bứt phá.</p>
+                    <button class="btn btn-warning btn-lg px-4 fw-bold shadow-sm">Khám Phá Liền</button>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="container my-5">
+        <h2 class="text-center fw-bold mb-4 position-relative">Sản Phẩm Nổi Bật</h2>
+        
+        <div class="row g-4">
+            
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm border-0 position-relative">
+                    <span class="position-absolute top-0 start-0 m-3 badge bg-danger text-uppercase px-2.5 py-1.5 shadow-sm">Sale</span>
+                    <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500" class="card-img-top" alt="Áo thun" style="height: 280px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-bold text-truncate mb-1">Áo Thun Minimalist</h5>
+                            <p class="card-text text-muted small mb-3">100% Cotton organic siêu thoáng mát, giữ dáng chuẩn phom.</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="fw-bold text-dark fs-5">350.000đ</span>
+                            <button class="btn btn-sm btn-outline-primary px-3 rounded-2" data-bs-toggle="modal" data-bs-target="#quickViewModal">Xem nhanh</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm border-0 position-relative">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500" class="card-img-top" alt="Áo khoác" style="height: 280px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-bold text-truncate mb-1">Áo Khoác Bomber</h5>
+                            <p class="card-text text-muted small mb-3">Vải dù cao cấp hai lớp cản gió chống nước nhẹ, thiết kế năng động.</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="fw-bold text-dark fs-5">750.000đ</span>
+                            <button class="btn btn-sm btn-outline-primary px-3 rounded-2" data-bs-toggle="modal" data-bs-target="#quickViewModal">Xem nhanh</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm border-0 position-relative">
+                    <span class="position-absolute top-0 start-0 m-3 badge bg-danger text-uppercase px-2.5 py-1.5 shadow-sm">Sale</span>
+                    <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=500" class="card-img-top" alt="Quần Jean" style="height: 280px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-bold text-truncate mb-1">Quần Jean Slimfit</h5>
+                            <p class="card-text text-muted small mb-3">Chất liệu denim co giãn thoải mái, màu sắc bền bỉ cao cấp.</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="fw-bold text-dark fs-5">490.000đ</span>
+                            <button class="btn btn-sm btn-outline-primary px-3 rounded-2" data-bs-toggle="modal" data-bs-target="#quickViewModal">Xem nhanh</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm border-0 position-relative">
+                    <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500" class="card-img-top" alt="Giày" style="height: 280px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-bold text-truncate mb-1">Giày Sneaker White</h5>
+                            <p class="card-text text-muted small mb-3">Phom dáng basic, dễ dàng phối đồ linh hoạt cho mọi sự kiện.</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="fw-bold text-dark fs-5">890.000đ</span>
+                            <button class="btn btn-sm btn-outline-primary px-3 rounded-2" data-bs-toggle="modal" data-bs-target="#quickViewModal">Xem nhanh</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header bg-light border-0">
+                    <h5 class="modal-title fw-bold" id="quickViewModalLabel">Xem Nhanh Sản Phẩm</h5>
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row g-4">
+                        <div class="col-12 col-md-6">
+                            <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500" class="img-fluid rounded shadow-sm" alt="Ảnh chi tiết lớn">
+                        </div>
+                        <div class="col-12 col-md-6 d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="fw-bold text-dark mb-2">Áo Thun Minimalist Premium</h3>
+                                <div class="mb-3">
+                                    <span class="text-danger fs-4 fw-bold me-2">350.000đ</span>
+                                    <span class="text-muted text-decoration-line-through small">500.000đ</span>
+                                </div>
+                                <p class="text-muted small lh-relaxed">Sản phẩm thuộc bộ sưu tập Premium độc quyền của cửa hàng. Sợi bông chải kỹ tự nhiên giúp bề mặt vải mịn màng, thông thoáng, không bai nhão và không xù lông khi xử lý bằng máy giặt.</p>
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold text-secondary small">Kích thước (Size):</label>
+                                    <select class="form-select border-secondary-subtle">
+                                        <option>Size S — (45-55kg)</option>
+                                        <option selected>Size M — (55-65kg)</option>
+                                        <option>Size L — (65-75kg)</option>
+                                        <option>Size XL — (75-85kg)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-100 py-2.5 fw-bold" data-bs-dismiss="modal">Thêm Vào Giỏ Hàng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white-50 pt-5 pb-3 border-top border-secondary">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h5 class="text-white fw-bold mb-3">Về Hiên Boutique</h5>
+                    <p class="small lh-relaxed">Nhà phân phối và thiết kế các dòng sản phẩm thời trang phong cách tối giản dẫn đầu xu hướng năng động cho giới trẻ hiện đại.</p>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                    <h5 class="text-white fw-bold mb-3">Chính Sách Cửa Hàng</h5>
+                    <ul class="list-unstyled small mb-0">
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Chính sách đổi trả trong vòng 30 ngày</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Bảo mật thông tin khách hàng</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Quy trình đóng gói & giao vận</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                    <h5 class="text-white fw-bold mb-3">Dịch Vụ Hỗ Trợ</h5>
+                    <ul class="list-unstyled small mb-0">
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Tổng đài chăm sóc khách hàng 24/7</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Hướng dẫn lựa chọn số đo size</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Hệ thống định vị chuỗi cửa hàng</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h5 class="text-white fw-bold mb-3">Đăng Ký Nhận Tin</h5>
+                    <p class="small mb-2">Để lại địa chỉ Email để không cập nhật sớm nhất các chương trình tri ân ưu đãi.</p>
+                    <div class="input-group mb-2">
+                        <input type="email" class="form-control" placeholder="Địa chỉ email..." aria-label="Recipient's email">
+                        <button class="btn btn-primary px-3" type="button">Gửi</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="text-center small">
+                © 2026 Tạ Viết Hiên. Built with Bootstrap 5. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

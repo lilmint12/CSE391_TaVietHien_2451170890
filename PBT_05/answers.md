@@ -143,7 +143,7 @@ Tại sao trình duyệt KHÔNG đọc được file .scss? Cần bước gì đ
     3.Kết nối: Bạn sẽ nhúng file .css (kết quả sau khi compile) vào file HTML của mình.
 
 PHẦN C — PHÂN TÍCH (20 điểm)
-Câu C1 (10đ) — Phân tích trang web thực
+### Câu C1 (10đ) — Phân tích trang web thực
 ## Minh họa giao diện Responsive
 
 ### 📱 Giao diện Mobile
@@ -161,5 +161,203 @@ font-size giảm nhẹ và line-heigh tăng nhẹ để chữ dễ đọc
 
 3. Mở DevTools → Styles, tìm @media rules. Chụp screenshot ít nhất 2 media queries trang đó dùng.
 
+### Câu C2 (10đ) — Thiết kế Responsive Strategy
+Bạn được giao thiết kế trang Đặt bàn nhà hàng responsive. Trang có:
+
+Header với logo + điện thoại đặt bàn
+Hero image toàn trang
+Grid 6 ảnh món ăn
+Form đặt bàn (ngày, giờ, số người, ghi chú)
+Bản đồ Google Maps nhúng
+Footer
+    Yêu cầu: Vẽ wireframe (sơ đồ bố cục) cho 3 kích thước: Mobile, Tablet, Desktop.
+-moblie :
++-----------------------------------+
+| [Logo]                        [☰] |  <-- Header (Gom Hotline vào Menu)
++-----------------------------------+
+|                                   |
+|            HERO IMAGE             |  <-- Chiếm toàn chiều ngang
+|                                   |
++-----------------------------------+
+|         FORM ĐẶT BÀN              |
+| [ Ngày / Giờ ]                    |  <-- Các ô input xếp dọc
+| [ Số người ]                      |
+| [ Ghi chú... ]                    |
+| [ ĐẶT BÀN NGAY ]                  |
++-----------------------------------+
+| GRID MÓN ĂN (1 Cột - Hiện 3 ảnh)  |
+| +-------------------------------+ |
+| |          [Ảnh món 1]          | |
+| +-------------------------------+ |
+| |          [Ảnh món 2]          | |
+| +-------------------------------+ |
+| |          [Ảnh món 3]          | |
+| +-------------------------------+ |
++-----------------------------------+
+|                                   |
+|         GOOGLE MAPS (Ẩn bớt)      |  <-- Thu nhỏ chiều cao bản đồ
+|                                   |
++-----------------------------------+
+|             FOOTER                |  <-- Xếp dọc thông tin
++-----------------------------------+
+
+-tablet:
++-------------------------------------------------------+
+| [Logo]                                  Hotline: 1900 |  <-- Header hiện Hotline
++-------------------------------------------------------+
+|                                                       |
+|                      HERO IMAGE                       |
+|                                                       |
++-------------------------------------------------------+
+|                     FORM ĐẶT BÀN                      |
+| [ Ngày / Giờ ]  [ Số người ]  [ Ghi chú ]  [ BUTTON ] |  <-- Gom thành 2 cột/hàng ngang
++-------------------------------------------------------+
+| GRID MÓN ĂN (2 Cột x 3 Hàng)                          |
+| +--------------------------+ +--------------------------+ |
+| |       [Ảnh món 1]        | |       [Ảnh món 2]        | |
+| +--------------------------+ +--------------------------+ |
+| |       [Ảnh món 3]        | |       [Ảnh món 4]        | |
+| +--------------------------+ +--------------------------+ |
+| |       [Ảnh món 5]        | |       [Ảnh món 6]        | |
+| +--------------------------+ +--------------------------+ |
++-------------------------------------------------------+
+|                                                       |
+|                      GOOGLE MAPS                      |  <-- Bản đồ tràn ngang rộng rãi
+|                                                       |
++-------------------------------------------------------+
+|                        FOOTER                         |
++-------------------------------------------------------+
+- desktop:
++-------------------------------------------------------------------+
+| [Logo]            [Trang chủ]  [Thực đơn]  [Liên hệ]  Hotline: 1900 | <-- Header đầy đủ
++-------------------------------------------------------------------+
+|                                                                   |
+|                            HERO IMAGE                             |
+|                                                                   |
++-------------------------------------------------------------------+
+| CỘT TRÁI: NỘI DUNG CHÍNH (65%)     | CỘT PHẢI: SIDEBAR (35%)      |
+|                                    |                              |
+| GRID MÓN ĂN (3 Cột x 2 Hàng)       | +--------------------------+ |
+| +---------+ +---------+ +---------+ | |       FORM ĐẶT BÀN       | |
+| | [Món 1] | | [Món 2] | | [Món 3] | | |                          | |
+| +---------+ +---------+ +---------+ | | [Ngày]       [Giờ]       | |
+| | [Món 4] | | [Món 5] | | [Món 6] | | | [Số người]               | |
+| +---------+ +---------+ +---------+ | | [Ghi chú]                | |
+|                                    | |                          | |
+| GOOGLE MAPS                        | |      [ ĐẶT BÀN NGAY ]    | |
+| +--------------------------------+ | +--------------------------+ |
+| |                                | |                              |
+| |          [Bản đồ nhúng]        | |                              |
+| |                                | |                              |
+| +--------------------------------+ |                              |
++-------------------------------------------------------------------+
+|                              FOOTER                               |
++-------------------------------------------------------------------+
+    Mobile: Những gì bị ẩn? Form nằm đâu?
+    header sdt đặt bàn, các nav a, sidebar đặt bàn bị ẩn
+    Tablet: Grid ảnh mấy cột? Bản đồ nằm đâu?
+    2 cột goodle map nằm ở dưới món ăn
+    Desktop: Layout bao nhiêu cột? Sidebar có không?
+    layout có 2 cột 
+    Viết CSS skeleton (chỉ layout, không cần chi tiết) dùng Grid + Media Queries Mobile-First.
+    ```
+    <div class="restaurant-layout">
+    <header class="header">Header (Logo + Hotline)</header>
+    <section class="hero">Hero Image</section>
+    <main class="main-content">
+        <section class="menu-grid">Grid 6 ảnh món ăn</section>
+        <section class="maps">Google Maps</section>
+    </main>
+    <aside class="sidebar-form">Form đặt bàn</aside>
+    <footer class="footer">Footer</footer>
+    </div>
+```
+```
+    .restaurant-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header .hotline,
+    .header nav {
+    display: none; 
+    }
+
+    .hero {
+        width: 100%;
+        height: auto;
+    }
+
+    .sidebar-form {
+        display: block;
+    }
+
+    .menu-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .menu-grid .menu-item:nth-child(n+4) {
+        display: none;
+    }
+
+    .maps {
+        width: 100%;
+    }
+
+    @media screen and (min-width: 768px) {
+    .header .hotline {
+        display: block;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .menu-grid .menu-item:nth-child(n+4) {
+        display: block;
+    }
+    }
+
+    @media screen and (min-width: 1440px) {
+    .header nav {
+        display: flex;
+        gap: 20px;
+    }
+
+    .restaurant-layout {
+        grid-template-columns: 65% 35%;
+        grid-template-areas:
+        "header  header"
+        "hero    hero"
+        "main    sidebar"
+        "footer  footer";
+        gap: 30px;
+    }
+
+    .header       { grid-area: header; }
+    .hero         { grid-area: hero; }
+    .main-content { grid-area: main; }
+    .sidebar-form { grid-area: sidebar; }
+    .footer       { grid-area: footer; }
+
+    .menu-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .sidebar-form {
+        position: sticky;
+        top: 20px;
+        height: max-content;
+    }
+    }
+    ```
 ![media1](./screenshots/media1.png)
 ![media2](./screenshots/media2.png)
