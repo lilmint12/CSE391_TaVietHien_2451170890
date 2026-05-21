@@ -64,15 +64,50 @@ Container theo breakpoint (>=768px)
 #### Câu C1 (10đ) — Tùy biến Bootstrap
 
 1. Bạn muốn đổi màu `$primary` từ xanh mặc định sang `#E63946`. Giải thích quy trình (cần công cụ gì, modify file nào).
+     công cụ cần là một trình biên dịch sass để chuyển file .scss sang .css
+     file cần tạo mới :
+     main.scss định nghĩa lại màu trên va compile thành main.css roi nhung file main.css sau file hoac cdn cua bootstrap
 2. Tại sao KHÔNG nên override trực tiếp `.btn-primary { background: red; }` mà nên dùng SASS variables?
-
+Việc viết .btn-primary { background: red; } là một cách làm "chắp vá" và để lại nhiều hệ lụy vì:
+    - Mất tính đồng bộ do btn-primart có nhiều thuộc tính khác 
+    - khó bảo trì vì overide rải rác không chỉnh sửa được
+    - bootstrap được custom bằng biến sass thì các class có $primary được cập nhật
 #### Câu C2 (10đ) — So sánh
 
 Viết CSS thuần (từ PBT trước) để tạo 1 navbar responsive + 1 product card. So sánh với Bootstrap version:
-- Số dòng CSS cần viết
+css:
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+    .product-card {
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.1);
+    transition: .3s;
+    }
+
+    @media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    }
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="card">
+- Số dòng CSS cần viết 
+css: khoảng 100 dòng 
+bootstrap: 10-30 dòng
 - Thời gian phát triển
-- Khả năng tùy biến  
+css mất nhiều thời gian để debug xây dựng componemt
+bootstrap nhanh hơn 
+- Khả năng tùy biến 
+css tùy biến nhanh hơn dễ cá nhân hóa tối ưu hơn nhưng tốn công phát triển
+bootstrap nhanh dễ đồng bộ componemt nhiều đầy đủ 
 - Khi nào NÊN và KHÔNG NÊN dùng Bootstrap?
+nên dùng khi cần demo phát triển nhanh, đơn giản không quá phức tạp 
+không nên khi cần ui/ux không đụng hàng đại trà của bootstrap 
+tối ưu hiệu năng 
 
 ---
 
