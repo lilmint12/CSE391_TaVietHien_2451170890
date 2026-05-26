@@ -802,34 +802,34 @@ Tạo danh sách câu hỏi thường gặp, click để mở/đóng đáp án.
 ## ✅ Checklist tổng hợp
 
 ### Project 1: Digital Clock
-- [ ] Hiển thị giờ:phút:giây
-- [ ] Cập nhật mỗi giây với `setInterval`
-- [ ] Ngày tháng tiếng Việt
-- [ ] Lời chào theo thời gian
+- [v] Hiển thị giờ:phút:giây
+- [v] Cập nhật mỗi giây với `setInterval`
+- [v] Ngày tháng tiếng Việt
+- [v] Lời chào theo thời gian
 
 ### Project 2: Color Palette
-- [ ] Tạo 5 màu ngẫu nhiên
-- [ ] Click để copy mã hex
-- [ ] Toast notification
-- [ ] Nút tạo bảng mới
+- [v] Tạo 5 màu ngẫu nhiên
+- [v] Click để copy mã hex
+- [v] Toast notification
+- [v] Nút tạo bảng mới
 
 ### Project 3: Tip Calculator
-- [ ] Nhập hóa đơn, chọn % tip
-- [ ] Chia đều cho số người
-- [ ] Format tiền VNĐ
-- [ ] Tính realtime
+- [v] Nhập hóa đơn, chọn % tip
+- [v] Chia đều cho số người
+- [v] Format tiền VNĐ
+- [v] Tính realtime
 
 ### Project 4: Password Checker
-- [ ] 5 tiêu chí kiểm tra
-- [ ] Thanh strength bar
-- [ ] Toggle hiển thị mật khẩu
-- [ ] Regex validation
+- [v] 5 tiêu chí kiểm tra
+- [v] Thanh strength bar
+- [v] Toggle hiển thị mật khẩu
+- [v] Regex validation
 
 ### Project 5: Accordion FAQ
-- [ ] Click mở/đóng
-- [ ] Animation CSS
-- [ ] Event delegation
-- [ ] Chỉ mở 1 mục tại một thời điểm
+- [v] Click mở/đóng
+- [v] Animation CSS
+- [v] Event delegation
+- [v] Chỉ mở 1 mục tại một thời điểm
 
 ---
 
