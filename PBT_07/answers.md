@@ -62,14 +62,16 @@ Sau khi trả lời, chạy code kiểm tra. Giải thích **tại sao** `"5" + 
 Dự đoán `true` hay `false`:
 
 ```javascript
-console.log(5 == "5");                // ???
-console.log(5 === "5");               // ???
-console.log(null == undefined);       // ???
-console.log(null === undefined);      // ???
-console.log(NaN == NaN);             // ???
-console.log(0 == false);             // ???
-console.log(0 === false);            // ???
-console.log("" == false);            // ???
+console.log(typeof null);              // "object"
+console.log(typeof undefined);         // "undefined"
+console.log(typeof NaN);              // "number"
+console.log("5" + 3);                 // "53"
+console.log("5" - 3);                 // 2
+console.log("5" * "3");              // 15
+console.log(true + true);            // 2
+console.log([] + []);                // "" (Chuỗi rỗng)
+console.log([] + {});                // "[object Object]"
+console.log({} + []);                // "[object Object]" (hoặc 0 tùy thuộc vào môi trường chạy console)
 ```
 
 **Quy tắc:** Từ giờ trở đi, bạn nên dùng `==` hay `===`? Tại sao?
