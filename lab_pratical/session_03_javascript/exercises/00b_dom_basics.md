@@ -483,29 +483,29 @@ danhSach.replaceChild(replacement, oldItem);
 ## ✅ Checklist tổng hợp
 
 ### Chọn phần tử
-- [ ] `document.getElementById('id')` — chọn theo ID
-- [ ] `document.querySelector('.class')` — chọn phần tử đầu tiên
-- [ ] `document.querySelectorAll('.class')` — chọn tất cả
+- [v] `document.getElementById('id')` — chọn theo ID
+- [v] `document.querySelector('.class')` — chọn phần tử đầu tiên
+- [v] `document.querySelectorAll('.class')` — chọn tất cả
 
 ### Thay đổi nội dung
-- [ ] `element.textContent = "text"` — thay text
-- [ ] `element.innerHTML = "<b>HTML</b>"` — thay HTML
-- [ ] Phân biệt `textContent` vs `innerHTML`
+- [v] `element.textContent = "text"` — thay text
+- [v] `element.innerHTML = "<b>HTML</b>"` — thay HTML
+- [v] Phân biệt `textContent` vs `innerHTML`
 
 ### Thay đổi thuộc tính
-- [ ] `element.setAttribute('class', 'value')`
-- [ ] `element.removeAttribute('attr')`
-- [ ] `element.classList.add()`, `.remove()`, `.toggle()`, `.contains()`
+- [v] `element.setAttribute('class', 'value')`
+- [v] `element.removeAttribute('attr')`
+- [v] `element.classList.add()`, `.remove()`, `.toggle()`, `.contains()`
 
 ### Thay đổi style
-- [ ] `element.style.propertyName = 'value'` (camelCase)
-- [ ] Phân biệt inline style vs CSS class
+- [v] `element.style.propertyName = 'value'` (camelCase)
+- [v] Phân biệt inline style vs CSS class
 
 ### Tạo & Xóa phần tử
-- [ ] `document.createElement('tag')` — tạo mới
-- [ ] `parent.appendChild(child)` — thêm vào cuối
-- [ ] `parent.prepend(child)` — thêm vào đầu
-- [ ] `element.remove()` — xóa
+- [v] `document.createElement('tag')` — tạo mới
+- [v] `parent.appendChild(child)` — thêm vào cuối
+- [v] `parent.prepend(child)` — thêm vào đầu
+- [v] `element.remove()` — xóa
 
 ---
 

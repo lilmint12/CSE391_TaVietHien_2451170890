@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Basics</title>
+    <style>
+        /* Thêm vào <style> trong HTML */
+    .highlight {
+        background-color: #fef3c7;
+        border-left: 4px solid #f59e0b;
+        padding: 0.5rem;
+    }
+
+    .bold { font-weight: bold; }
+    .text-red { color: #ef4444; }
+    .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <h1 id="title">Xin chào DOM!</h1>
+    <p class="description">Đây là đoạn văn đầu tiên</p>
+    <p class="description">Đây là đoạn văn thứ hai</p>
+    <ul id="danh-sach">
+        <li class="item">HTML</li>
+        <li class="item">CSS</li>
+        <li class="item">JavaScript</li>
+    </ul>
+
+    <script>
+        // Mở Console (F12) để xem kết quả
+        console.log("Document:", document);
+        console.log("Title:", document.title);
+        console.log("Body:", document.body);
+        console.log("Bài 0B.2 — Chọn phần tử (10 phút)")
+
+    // Duyệt qua tất cả
+// ### Bài 0B.2 — Chọn phần tử (10 phút)
+        // **Bài tập con:**
+        // ```javascript
+        // // TODO: Dùng Console thực hiện:
+        // // 1. Chọn h1 bằng getElementById
+        console.log(document.getElementById('title'))
+        // // 2. Chọn p đầu tiên bằng querySelector
+        console.log(document.querySelector('.description'))
+        // // 3. Chọn tất cả li bằng querySelectorAll
+        const allItems = document.querySelectorAll('.item');
+        console.log("querySelectorAll:", allItems);      // NodeList(3)
+        console.log("Số phần tử:", allItems.length);     // 3
+        // // 4. In ra nội dung của từng phần tử
+        allItems.forEach((item, index) => {
+        console.log(`Item ${index}: ${item.textContent}`);
+    });
+// ### Bài 0B.3 — Thay đổi nội dung (10 phút)
+
+    const title = document.getElementById('title');
+
+    // ===== textContent — chỉ text thuần =====
+    title.textContent = "JavaScript thật tuyệt!";
+    // Thay đổi ngay trên trang web!
+
+    // ===== innerHTML — có thể chứa HTML =====
+    title.innerHTML = "JavaScript <em>thật tuyệt</em>!";
+    // <em> sẽ render thành in nghiêng
+
+    // ===== Phân biệt textContent vs innerHTML =====
+    const desc = document.querySelector('.description');
+    desc.textContent = "<b>In đậm</b>";
+    // Hiển thị: <b>In đậm</b> (hiển thị nguyên text, KHÔNG render HTML)
+    desc.innerHTML = "<b>In đậm</b>";
+    // Hiển thị: In đậm (render thành HTML)
+
+    // **Thử ngay:** Mở Console, gõ:
+    document.getElementById('title').textContent = "Tôi đã thay đổi!"
+    document.querySelector('.description').innerHTML = "<strong>Đậm!</strong>"
+
+
+    // **Bài tập con:**
+
+    // TODO: Thực hiện trên trang dom_basics.html
+    // 1. Đổi title thành tên của bạn
+    title.textContent="Tạ Viết Hiên"
+    // 2. Đổi p đầu tiên thành "Tôi đang học DOM"
+    const firt_p=document.querySelector('.description')
+    firt_p.textContent="Tôi đang học dom"
+    // 3. Đổi nội dung li đầu tiên thành "<strong>HTML5</strong>"
+    allItems[0].innerHTML="<strong>HTML5</strong>"
+    // 4. Dùng querySelectorAll + forEach: thêm "(đã học)" vào cuối mỗi li
+    allItems.forEach((item) => {
+        item.textContent += " (đã học)";
+    });
+// ### Bài 0B.4 — Thay đổi thuộc tính (10 phút)
+// **Bài tập con:**
+
+// TODO:
+// 1. Thêm class "highlight" cho tất cả li
+allItems.forEach((item) =>{
+    item.classList.add("highlight")
+})
+// 2. Thêm attribute "data-index" cho mỗi li (0, 1, 2)
+for(let i=0;i<3;i++) {
+    allItems[i].setAttribute("data-index",i)
+}
+// 3. Đổi title của trang (document.title) thành "DOM Practice"
+    document.title = "DOM Practice";
+// ### Bài 0B.5 — classList — Quản lý CSS class (10 phút)
+// **Yêu cầu:** Thêm/xóa/toggle CSS class.
+/* Thêm vào <style> trong HTML */
+// .highlight {
+//     background-color: #fef3c7;
+//     border-left: 4px solid #f59e0b;
+//     padding: 0.5rem;
+// }
+// .bold { font-weight: bold; }
+// .text-red { color: #ef4444; }
+// .hidden { display: none; }
+title.classList.add('highlight');
+console.log(title.className); // "main-title highlight"
+
+// ===== remove — xóa class =====
+title.classList.remove('highlight');
+
+// ===== toggle — bật/tắt class =====
+title.classList.toggle('highlight');  // Thêm nếu chưa có, xóa nếu đã có
+title.classList.toggle('highlight');  // Xóa (vì đang có)
+
+// ===== contains — kiểm tra có class không =====
+console.log(title.classList.contains('highlight')); // false
+
+// ===== replace — thay thế class =====
+title.classList.replace('main-title', 'sub-title');
+
+// ===== Thêm nhiều class cùng lúc =====
+title.classList.add('bold', 'text-red');
+
+// TODO Bài 0B.5:
+// 1. Thêm class "highlight" cho tất cả li
+allItems.forEach((item) => {
+    item.classList.add("highlight");
+});
+
+// 2. Kiểm tra li đầu tiên có class "highlight" không
+console.log(allItems[0].classList.contains('highlight')); // Kết quả: true
+
+// 3. Toggle class "text-red" cho li thứ hai (chỉ mục số 1)
+allItems[1].classList.toggle('text-red');
+
+// 4. Xóa class "highlight" khỏi tất cả li (dùng forEach)
+allItems.forEach((item) => {
+    item.classList.remove('highlight');
+});
+
+// ### Bài 0B.6 — Thay đổi Style (Inline) (10 phút)
+
+// 1. Chọn tất cả li
+const finalItems = document.querySelectorAll('.item');
+
+// Duyệt qua từng phần tử li bằng forEach để kiểm tra điều kiện và thay đổi style
+finalItems.forEach((item, index) => {
+    // 2 & 3. Kiểm tra index chẵn hay lẻ bằng toán tử chia lấy dư (%)
+    if (index % 2 === 0) {
+        // Index chẵn (0, 2, 4...): màu nền xanh nhạt
+        item.style.backgroundColor = '#dbeafe';
+    } else {
+        // Index lẻ (1, 3, 5...): màu nền hồng nhạt
+        item.style.backgroundColor = '#fce7f3';
+    }
+    // 4. Đặt Font size tăng dần theo công thức: (index + 1) * 14 px
+    // Lưu ý: Phải cộng thêm chuỗi 'px' làm đơn vị thì trình duyệt mới hiểu
+    item.style.fontSize = (index + 1) * 14 + 'px';
+});
+// ### Bài 0B.7 — Tạo & Xóa phần tử (10 phút)
+
+// **Bài tập con — Danh sách động:**
+// TODO: Tạo function themMonHoc(tenMon)
+function themMonHoc(tenMon)
+{
+    const newItem=document.createElement('li')
+    newItem.classList.add('item')
+    newItem.textContent=tenMon
+    const ul_1=document.getElementById('danh-sach')
+    ul_1.appendChild(newItem)
+}
+// 1. Tạo <li> mới với class "item"
+// 2. textContent = tenMon
+// 3. Thêm vào cuối <ul id="danh-sach">
+// 4. Gọi thử: themMonHoc("Vue.js"), themMonHoc("Node.js")
+themMonHoc("Vue.js")
+themMonHoc("Node.js")
+    </script>
+</body>
+</html>
