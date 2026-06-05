@@ -10,28 +10,50 @@ const products = [
     { id: 9, name: "Pixel 9", price: 19990000, category: "phone", stock: 12, rating: 4.6 },
     { id: 10, name: "ThinkPad X1", price: 32990000, category: "laptop", stock: 3, rating: 4.5 }
 ];
-// 1. Lọc sản phẩm còn hàng (stock > 0)
-function getInStock(products) { return products.filter( p => p.stock>0) }
+// 1. Lọc sản phẩm còn hàng
+function getInStock(products) { 
+    return products.filter(p => p.stock > 0); 
+}
 
 // 2. Lọc theo category VÀ khoảng giá
-function filterProducts(products, category, minPrice, maxPrice) { return products.filter(p => p.category === category && p.price >= min && p.price <= max) }
+function filterProducts(products, category, minPrice, maxPrice) { 
+    return products.filter(p => p.category === category && p.price >= minPrice && p.price <= maxPrice); 
+}
 
 // 3. Sắp xếp theo giá (tăng/giảm)
-function sortByPrice(products, order = "asc") { return products.sr }
+function sortByPrice(products, order = "asc") { 
+    return [...products].sort((a, b) => order === "asc" ? a.price - b.price : b.price - a.price);
+}
 
 // 4. Tìm sản phẩm rẻ nhất mỗi category
-function cheapestByCategory(products) { /* ... */ }
-// → { phone: {...}, laptop: {...}, tablet: {...}, accessory: {...} }
+function cheapestByCategory(products) {
+    return products.reduce((acc, p) => {
+        if (!acc[p.category] || p.price < acc[p.category].price) {
+            acc[p.category] = p;
+        }
+        return acc;
+    }, {});
+}
 
-// 5. Tính tổng giá trị kho (price × stock cho mỗi SP)
-function totalInventoryValue(products) { /* ... */ }
+// 5. Tính tổng giá trị kho
+function totalInventoryValue(products) { 
+    return products.reduce((sum, p) => sum + (p.price * p.stock), 0); 
+}
 
 // 6. Tạo mảng chỉ chứa { name, formattedPrice }
-function formatProductList(products) { /* ... */ }
-// → [{ name: "iPhone 16", formattedPrice: "25.990.000đ" }, ...]
+function formatProductList(products) { 
+    return products.map(p => ({ 
+        name: p.name, 
+        formattedPrice: p.price.toLocaleString('vi-VN') + "đ" 
+    })); 
+}
 
 // 7. Tính rating trung bình toàn bộ
-function averageRating(products) { /* ... */ }
+function averageRating(products) { 
+    return products.reduce((sum, p) => sum + p.rating, 0) / products.length; 
+}
 
-// 8. Tìm sản phẩm theo keyword (tìm trong name, case-insensitive)
-function searchProducts(products, keyword) { /* ... */ }
+// 8. Tìm sản phẩm theo keyword (case-insensitive)
+function searchProducts(products, keyword) { 
+    return products.filter(p => p.name.toLowerCase().includes(keyword.toLowerCase())); 
+}
