@@ -124,3 +124,100 @@ console.log(product.price);            // 25990000 (Không đổi, vì Spread t�
 const copy = { ...product };
 copy.specs.ram = 16;
 console.log(product.specs.ram);        // 6 (Bị đổi thành 16)
+
+Phần C
+
+Câu C1 (10đ) — Refactor Code
+Code sau hoạt động đúng nhưng viết rất tệ. Refactor sử dụng array methods + arrow functions:
+
+// TRƯỚC (ugly code):
+function processOrders(orders) {
+    var result = [];
+    for (var i = 0; i < orders.length; i++) {
+        if (orders[i].status === "completed") {
+            if (orders[i].total > 100000) {
+                var item = {};
+                item.id = orders[i].id;
+                item.customer = orders[i].customer;
+                item.total = orders[i].total;
+                item.discount = orders[i].total * 0.1;
+                item.finalTotal = orders[i].total - item.discount;
+                result.push(item);
+            }
+        }
+    }
+    // Sort by finalTotal descending
+    for (var j = 0; j < result.length; j++) {
+        for (var k = j + 1; k < result.length; k++) {
+            if (result[j].finalTotal < result[k].finalTotal) {
+                var temp = result[j];
+                result[j] = result[k];
+                result[k] = temp;
+            }
+        }
+    }
+    return result;
+}
+Viết lại thành ≤ 10 dòng dùng filter, map, sort, destructuring, arrow functions.
+const processOrders = (orders) => orders
+  .filter(({ status, total }) => status === "completed" && total > 100000)
+  .map(({ id, customer, total }) => ({
+    id, customer, total,
+    discount: total * 0.1,
+    finalTotal: total * 0.9
+  }))
+  .sort((a, b) => b.finalTotal - a.finalTotal);
+  Câu C2 (10đ) — Thiết kế API
+Bạn đang thiết kế một thư viện JS nhỏ miniArray cung cấp map, filter, reduce TỰ VIẾT (không dùng built-in).
+
+const miniArray = {
+    map(arr, fn) {
+        // Implement: giống Array.prototype.map
+    },
+    filter(arr, fn) {
+        // Implement: giống Array.prototype.filter
+    },
+    reduce(arr, fn, initialValue) {
+        // Implement: giống Array.prototype.reduce
+    }
+};
+
+
+
+->>>>
+const miniArray = {
+  map(arr, fn) {
+    const result = [];
+    for (let i = 0; i < arr.length; i++) {
+      result.push(fn(arr[i], i, arr));
+    }
+    return result;
+  },
+
+  filter(arr, fn) {
+    const result = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (fn(arr[i], i, arr)) {
+        result.push(arr[i]);
+      }
+    }
+    return result;
+  },
+
+  reduce(arr, fn, initialValue) {
+    let accumulator = initialValue;
+    for (let i = 0; i < arr.length; i++) {
+      accumulator = fn(accumulator, arr[i], i, arr);
+    }
+    return accumulator;
+  }
+};
+
+// Kiểm thử
+console.log(miniArray.map([1, 2, 3], x => x * 2));        // → [2, 4, 6]
+console.log(miniArray.filter([1, 2, 3, 4], x => x > 2));    // → [3, 4]
+console.log(miniArray.reduce([1, 2, 3, 4], (a, b) => a + b, 0)); // → 10
+// Test phải pass:
+console.log(miniArray.map([1,2,3], x => x * 2));        // → [2,4,6]
+console.log(miniArray.filter([1,2,3,4], x => x > 2));    // → [3,4]
+console.log(miniArray.reduce([1,2,3,4], (a,b) => a+b, 0)); // → 10
