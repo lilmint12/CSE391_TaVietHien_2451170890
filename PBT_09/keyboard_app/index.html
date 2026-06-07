@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width,initial-scale=1">
+<title>Keyboard App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+    <h1>Keyboard Gallery</h1>
+
+    <button
+        id="prevBtn"
+        aria-label="Previous image">
+        ◀
+    </button>
+
+    <img
+        id="galleryImage"
+        alt="Gallery Image"
+    >
+
+    <button
+        id="nextBtn"
+        aria-label="Next image">
+        ▶
+    </button>
+
+    <div id="indicator"></div>
+
+    <button
+        id="openPalette"
+        aria-label="Open command palette">
+        Open Command Palette
+    </button>
+
+</div>
+
+<div id="paletteOverlay"
+     class="hidden">
+
+    <div class="palette">
+
+        <input
+            id="commandInput"
+            type="text"
+            placeholder="Type a command..."
+            aria-label="Command search"
+        >
+
+        <ul id="commandList"></ul>
+
+    </div>
+
+</div>
+
+<div id="imageModal"
+     class="hidden">
+
+    <div class="modal">
+
+        <img
+            id="modalImage"
+            alt="Preview"
+        >
+
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
