@@ -431,3 +431,65 @@ window.addEventListener(
             || "";
     }
 );
+
+Câu C2 (7đ) — Performance
+Giải thích: Tại sao bind event lên 1000 elements riêng lẻ là BAD PRACTICE? Event Delegation giải quyết thế nào?
+
+Cho code:
+
+for (let i = 0; i < 1000; i++) {
+    const div = document.createElement("div");
+    div.textContent = `Item ${i}`;
+    document.body.appendChild(div);   // ← 1000 lần reflow!
+}
+Refactor dùng DocumentFragment để chỉ gây 1 lần reflow. Giải thích tại sao nhanh hơn.
+
+Thay vì:
+
+1000 elements
+↓
+1000 listeners
+
+Ta dùng:
+
+1 parent element
+↓
+1 listener
+
+Ví dụ:
+
+const list =
+    document.querySelector("#list");
+
+list.addEventListener(
+    "click",
+    e => {
+
+        if(
+            e.target.classList.contains("item")
+        ){
+
+            console.log(
+                e.target.textContent
+            );
+        }
+    }
+);
+
+HTML:
+
+<ul id="list">
+    <li class="item">A</li>
+    <li class="item">B</li>
+    <li class="item">C</li>
+</ul>
+
+Khi click:
+
+Click li
+↓
+Event xảy ra trên li
+↓
+Bubble lên ul
+↓
+ul xử lý
